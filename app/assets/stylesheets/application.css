@@ -12,3 +12,7 @@
  *= require_tree .
  */
 
+.logo 
+{
+	margin: 15px;
+}
