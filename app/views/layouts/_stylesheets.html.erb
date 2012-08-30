@@ -6,7 +6,12 @@
 <!-- [if lt IE 8]>
 <%= stylesheet_link_tag 'blueprint/ie'%>
 <![endif] -->
-<%= stylesheet_link_tag 'sticky-footer'%>		
+<%= stylesheet_link_tag 'sticky-footer' %>		
+<!-- this is for superfish jquery plugin -->
+<%= stylesheet_link_tag 'superfish/superfish-navbar' %>
+<%= stylesheet_link_tag 'superfish/superfish-vertical' %>
+<%= stylesheet_link_tag 'superfish/superfish' %>
 <%= stylesheet_link_tag 'application', :media => 'screen'%>	
 <!-- this is specific for the home page -->
 <%= stylesheet_link_tag 'home' if params[:action] == 'home' %>
+
