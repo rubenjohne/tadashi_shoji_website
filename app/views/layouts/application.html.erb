@@ -7,9 +7,12 @@
 </head>
 <body>
 	<%= render 'layouts/header' %>
-	<%= render 'layouts/navigation' %>
-	<div class="container showgrid">
-		<%= yield %>
+	<%= render 'layouts/navigation' %>	
+	<div id="wrap">
+			<div id="main" class="container showgrid">
+				<%= yield %>
+			</div>	
+		</div>	
 	</div>
 	<%= render 'layouts/footer' %>
 </body>
