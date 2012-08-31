@@ -12,6 +12,16 @@
  *= require_tree .
  */
 
+/* blueprint resets */
+
+a
+{
+	text-decoration:none;
+}
+
+
+/* end blueprint resets */
+
 .logo 
 {
 	margin: 15px;
@@ -47,3 +57,19 @@ footer .footer-content {
 	float:right;
 }
 
+ul#footer-links
+{
+	list-style-type: none;
+	float: right;
+}
+
+ul#footer-links li
+{
+	float:left;
+	padding: 10px 10px 10px 0;
+}
+
+ul#footer-links li a
+{
+	color: #ffffff;
+}
