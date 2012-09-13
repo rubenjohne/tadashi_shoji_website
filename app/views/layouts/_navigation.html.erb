@@ -1,9 +1,27 @@
 <nav>
 	<ul class="sf-menu">
-		<li><a href="#">HOME</a></li>
-		<li><a href="#">SHOP</a></li>
-		<li><a href="#">COLLECTION</a></li>
-		<li><a href="#">WORLD OF TADASHI</a></li>
+		<li><%= link_to "HOME", root_path %></li>
+		<li><%= link_to "SHOP", "http://shop.tadashishoji.com", :target => 'blank' %></li>
+		<li>
+			<a href="#">COLLECTION</a>
+			<ul>
+				<li><a href="#">FW 2012 FASHION SHOW</a></li>
+				<li><a href="#">FW 2012 RUNWAY</a></li>
+				<li><a href="#">FW 2012 COLLECTION</a></li>
+				<li>
+					<a href="#">ARCHIVE</a>
+					<ul>
+						<li><a href="#">SS 2012 FASHION SHOW</a></li>
+						<li><a href="#">SS 2012 RUNWAY</a></li>
+						<li><a href="#">SS 2012 COLLECTION</a></li>
+						<li><a href="#">FW 2011 FASHION SHOW</a></li>
+						<li><a href="#">FW 2011 RUNWAY</a></li>
+						<li><a href="#">FW 2011 COLLECTION</a></li>
+					</ul>	
+				</li>	
+			</ul>	
+		</li>
+		<li><%= link_to "WORLD OF TADASHI", "http://blog.tadashishoji.com", :target => 'blank'  %></li>
 		<li><a href="#">STORE LOCATOR</a></li>
 	</ul>
 </nav>

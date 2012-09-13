@@ -1,10 +1,9 @@
 <footer id="footer">
 	<div class="footer-content">
-		<%= image_tag "twitter.png"%>
-		<%= image_tag "facebook.png"%>
-		<%= image_tag "youtube.png"%>
+		<%= link_to image_tag("twitter.png"), "http://twitter.com/TadashiShoji", :target => 'blank' %>
+		<%= link_to image_tag("facebook.png"), "http://www.facebook.com/tadashishoji",  :target => 'blank'  %>
 		<ul id="footer-links">
-			<li><a href="#">WHOLESALE</a></li>
+			<li><%= link_to "WHOLESALE", "http://catalog.tadashishoji.com", :target => 'blank' %></li>
 		</ul>	
 	</div>	
 </footer>	
