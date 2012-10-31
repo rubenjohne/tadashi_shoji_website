@@ -1,5 +1,9 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+  resources :users
+
+  resources :collections
+
   match '/', :to => 'pages#home'
   
   root :to => 'pages#home'

@@ -1,0 +1,13 @@
+<%= form_for(:collection, :url => collections_path) do |f| %>
+    <fieldset>
+        <legend>New Collection</legend>
+
+        <%=  render :partial => 'form', :locals => {:f => f} %>
+
+        <p>
+          <%=  submit_tag "Create" %>
+        </p>
+    </fieldset>
+<% end %>
+
+<%=  link_to 'Back', collections_path  %>
