@@ -19,6 +19,7 @@ group :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec'
   gem 'webrat', '0.7.1'
+  gem 'factory_girl_rails', '1.0'
 end
 
 # Gems used only for assets and not required
