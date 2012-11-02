@@ -9,6 +9,10 @@
 	</tr>	
 	<tr>
 		<th>password:</th>
-		<td><%= f.text_field :password, :class => 'text_field' %></td>
+		<td><%= f.password_field :password, :class => 'text_field' %></td>
+	</tr>		
+	<tr>
+		<th>password confirmation:</th>
+		<td><%= f.password_field :password_confirmation, :class => 'text_field' %></td>
 	</tr>		
 </table>	

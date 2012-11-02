@@ -1,6 +1,6 @@
 
 <%= form_for(:user, :url => users_path) do |f| %>
-
+	<%= render 'shared/error_messages' %>
     <fieldset>
         <legend>New user</legend>
 
