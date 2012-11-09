@@ -2,4 +2,7 @@
 	<%= link_to "/" do %>
 		<%= image_tag "logo.png", :class => 'logo'%>
 	<% end %>	
+	<% if signed_in? %>
+		<%= link_to "Sign out", signout_path, :class => "signout_link" %>
+	<% end %>	
 </header>

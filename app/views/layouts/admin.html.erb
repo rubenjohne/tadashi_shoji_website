@@ -6,6 +6,11 @@
   <%= render 'layouts/javascripts' %>
   <%= render 'layouts/stylesheets' %>
 </head>
+	<header>
+		<% if signed_in? %>
+			<%= link_to "Sign out", signout_path, :class => "signout_link" %>
+		<% end %>	
+	</header>	
 	<body>
 		<section id="flash">
 			<% flash.each do |key, value| %>

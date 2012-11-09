@@ -29,9 +29,13 @@ a
 
 
 header {
- height:81px;	
+ 	height:81px;	
+	.signout_link { 
+		position:fixed;
+		right: 5px;
+		top: 5px;
+	} 
 }
-
 
 nav {
 	height:19px;	
