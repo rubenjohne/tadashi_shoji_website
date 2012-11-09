@@ -1,9 +1,19 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+  resources :sizes
+
+  get "sessions/new"
+
   resources :users
 
   resources :collections
+  
+  resources :sessions, :only => [:new, :create, :destroy]
 
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  
+  
   match '/', :to => 'pages#home'
   
   root :to => 'pages#home'
