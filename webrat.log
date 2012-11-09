@@ -10,3 +10,7 @@ REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
 REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"", "password"=>"", "password_confirmation"=>""}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
 REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
 REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"", "password"=>"", "password_confirmation"=>""}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
+REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"", "password"=>"", "password_confirmation"=>""}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
+REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"", "password"=>"", "password_confirmation"=>""}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
