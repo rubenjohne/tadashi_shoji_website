@@ -1,0 +1,16 @@
+<h1>Editing size</h1>
+
+<%= form_for :size, :url => size_path(@size),
+            :html => {:method => :put} do |f| %>
+
+    <fieldset>
+      <legend>Edit size</legend>
+
+      <%=  render :partial => 'form', :locals => {:f => f} %>
+
+      <%=  submit_tag "Update" %>
+    </fieldset>
+<% end %>
+
+<%= link_to 'Show', size_path(@size) %> |
+<%= link_to 'Back',  size_path %>

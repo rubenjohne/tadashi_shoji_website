@@ -5,3 +5,13 @@ Factory.define :user do |user|
   user.password                 "foobar"
   user.password_confirmation    "foobar"
 end
+
+Factory.define :collection do |collection|
+  collection.collection         "Tadashi Shoji Fall 2012"
+end
+
+
+Factory.define :size do |size|
+  size.size_code              "0 to 16"
+  size.size_description       "Missy 0 to 16"
+end

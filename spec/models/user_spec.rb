@@ -46,6 +46,17 @@ describe User do
     user_with_duplicate_email.should_not be_valid
   end
   
+  describe "find methods" do
+    before(:each) do
+      @user = User.create!(@attr)      
+    end
+    
+    it "should find the user by email" do 
+      User.find_by_email("user@example.com").should_not be_nil
+    end
+    
+  end
+  
   describe "password validations" do
     before(:each) do
       @user = User.create!(@attr)
@@ -76,7 +87,7 @@ describe User do
       long = "a" * 41
       User.new(@attr.merge(:password => long, :password_confirmation => long)).should_not be_valid
     end
-    
+        
     describe "has_password? method" do
       
       it "should be true if the passwords match" do

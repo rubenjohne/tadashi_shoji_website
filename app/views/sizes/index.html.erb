@@ -1,0 +1,23 @@
+<h1>Sizes</h1>
+
+<table>
+  <tr>
+    <th>Size Code</th>
+    <th>Size Description</th>
+  </tr>
+
+<% @sizes.each do |size| %>
+    <tr>
+        <td><%=  size.size_code %></td>
+        <td><%=  size.size_description %></td>
+        <td><%=  link_to 'Show', size_path(size) %></td>
+        <td><%=  link_to 'Edit', edit_size_path(size) %></td>
+        <td><%=  button_to 'Destroy', size_path(size), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    </tr>
+<% end  %>
+
+
+</table>
+
+
+<%=  link_to 'New size', new_size_path %>

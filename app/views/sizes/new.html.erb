@@ -1,0 +1,13 @@
+<%= form_for(:size, :url => sizes_path) do |f| %>
+    <fieldset>
+        <legend>New Size</legend>
+
+        <%=  render :partial => 'form', :locals => {:f => f} %>
+
+        <p>
+          <%=  submit_tag "Create" %>
+        </p>
+    </fieldset>
+<% end %>
+
+<%=  link_to 'Back', sizes_path  %>
