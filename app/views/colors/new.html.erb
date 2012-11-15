@@ -1,0 +1,15 @@
+<%= form_for(:color, :url => colors_path) do |f| %>
+	
+	<fieldset>
+		<legend>New Color</legend>
+		
+			<%= render :partial => 'form', :locals => { :f => f} %>
+	
+		<p>
+			<%= submit_tag "Create" %>
+		</p>
+			
+	</fieldset>	
+	
+
+<% end %>	

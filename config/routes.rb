@@ -1,5 +1,7 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+  resources :colors
+
   resources :sizes
 
   get "sessions/new"

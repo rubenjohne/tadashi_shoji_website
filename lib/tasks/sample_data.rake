@@ -19,6 +19,10 @@ namespace :db do
     # create sample sizes
     Size.create!(:size_code => "0 to 16", :size_description => "Missy 0 to 16")
     
+    # create sample colors
+    Color.create!(:color_name => "BLACK", :color_name => "BLACK")
+    Color.create!(:color_name => "WHITE", :color_name => "WHITE")
+    Color.create!(:color_name => "RED", :color_name => "RED")
   end 
   
 end
