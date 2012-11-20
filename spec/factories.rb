@@ -20,3 +20,13 @@ Factory.define :color do |color|
   color.color_code            "BLACK"
   color.color_name            "BLACK COLOR"
 end
+
+Factory.define :style do |style|
+  style.name            "BLACK"
+  style.price           388
+  style.description     "chiffon beaded gown"
+  style.collection_id   1
+  style.color_id        1
+  style.size_id         1
+end
+

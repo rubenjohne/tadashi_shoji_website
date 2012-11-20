@@ -1,5 +1,7 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+  resources :styles
+
   resources :colors
 
   resources :sizes

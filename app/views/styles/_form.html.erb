@@ -1,0 +1,26 @@
+<table>
+	<tr>
+		<th>Style Name:</th>
+		<td><%= f.text_field :name, :class => 'text_field' %></td>
+	</tr>
+	<tr>
+		<th>Description:</th>
+		<td><%= f.text_field :description, :class => 'text_field' %></td>		
+	</tr>		
+	<tr>
+		<th>Color:</th>
+		<td><%= collection_select(:style, :color_id, Color.all, :id, :color_name, :prompt => true) %></td>
+	</tr>	
+	<tr>
+		<th>Collection:</th>
+		<td><%= collection_select(:style, :collection_id, Collection.all, :id, :collection, :prompt => true) %></td>
+	</tr>	
+	<tr>
+		<th>Size:</th>
+		<td><%= collection_select(:style, :size_id, Size.all, :id, :size_code, :prompt => true) %></td>
+	</tr>	
+	<tr>
+		<th>Price:</th>
+		<td><%= f.text_field :price, :class => 'text_field' %></td>
+	</tr>	
+</table>	

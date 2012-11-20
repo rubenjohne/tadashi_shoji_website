@@ -1,0 +1,29 @@
+<h1>Styles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Color</th>
+    <th>Colleciton</th>
+    <th>Size</th>
+  </tr>
+
+<% @styles.each do |style| %>
+    <tr>
+        <td><%=  style.name %></td>
+        <td><%=  style.description %></td>
+        <td><%=  Color.find(style.color_id).color_code %></td>
+        <td><%=  Collection.find(style.collection_id).collection %></td>
+        <td><%=  Size.find(style.size_id).size_code %></td>
+        <td><%=  link_to 'Show', style_path(style) %></td>
+        <td><%=  link_to 'Edit', edit_style_path(style) %></td>
+        <td><%=  button_to 'Destroy', style_path(style), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    </tr>
+<% end  %>
+
+
+</table>
+
+
+<%=  link_to 'New style', new_style_path %>
