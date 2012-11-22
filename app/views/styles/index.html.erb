@@ -5,7 +5,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Color</th>
-    <th>Colleciton</th>
+    <th>Collection</th>
     <th>Size</th>
   </tr>
 
@@ -13,9 +13,9 @@
     <tr>
         <td><%=  style.name %></td>
         <td><%=  style.description %></td>
-        <td><%=  Color.find(style.color_id).color_code %></td>
-        <td><%=  Collection.find(style.collection_id).collection %></td>
-        <td><%=  Size.find(style.size_id).size_code %></td>
+        <td><%=  Color.exists?(style.color_id)  ? Color.find(style.color_id).color_code : "" %></td>
+        <td><%=  Collection.exists?(style.collection_id) ? Collection.find(style.collection_id).collection : "" %></td>
+        <td><%=  Size.exists?(style.size_id) ? Size.find(style.size_id).size_code : "" %></td>
         <td><%=  link_to 'Show', style_path(style) %></td>
         <td><%=  link_to 'Edit', edit_style_path(style) %></td>
         <td><%=  button_to 'Destroy', style_path(style), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>

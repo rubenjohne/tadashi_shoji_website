@@ -1,12 +1,18 @@
 <table>
 	<tr>
 		<th>Style</th>
+		<th>Collection</th>
 		<th>Description</th>
+		<th>Color</th>
+		<th>Size</th>
 	</tr>	
 	<tr>
-		<td><%= @size.size_code %></td>
-		<td><%= @size.size_description %></td>
+		<td><%= @style.name %></td>
+		<td><%= Collection.exists?(@style.collection_id) ? Collection.find(@style.collection_id).collection : ""  %></td>
+		<td><%= @style.description %></td>
+		<td><%= Color.exists?(@style.color_id)  ? Color.find(@style.color_id).color_code : "" %></td>
+		<td><%= Size.exists?(@style.size_id) ? Size.find(@style.size_id).size_code : ""  %></td>
 	</tr>	
 </table>
 	
-<%= link_to  'back', colors_path %>
+<%= link_to  'back', styles_path %>

@@ -14,7 +14,7 @@ class StylesController < ApplicationController
   
   # GET styles/:id
   def show
-    @style = Style.new
+    @style = Style.find(params[:id])
   end
   
   # POST styles/
