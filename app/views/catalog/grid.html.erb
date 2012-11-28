@@ -1,0 +1,33 @@
+<h1 xmlns="http://www.w3.org/1999/html">All Styles</h1>
+
+
+<ul class="styles">
+  <% @styles.each_with_index   do |style, index = 1| %>
+     <% trueIndex = index + 1 %>                       
+
+     <% if  trueIndex == 1 %>
+        <ul>
+        <li>
+          <%= image_tag "regular/#{style.name}.jpg" %>
+        </li>
+    <% elsif trueIndex == @styles.size %>
+        <li>
+          <%= image_tag "regular/#{style.name}.jpg" %>
+        </li>
+        </ul>
+     <% elsif (trueIndex % 5) == 0 %>
+        <li>
+          <%= image_tag "regular/#{style.name}.jpg" %>
+        </li>
+        </ul>
+        <ul>
+     <% else %>
+        <li>
+          <%= image_tag "regular/#{style.name}.jpg" %>
+        </li>
+     <% end %>
+  <% end %>
+</ul>
+
+
+

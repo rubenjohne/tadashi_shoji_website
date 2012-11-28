@@ -1,5 +1,7 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+  get "catalog/grid"
+
   resources :styles
 
   resources :colors
