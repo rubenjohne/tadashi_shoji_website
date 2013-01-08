@@ -1,0 +1,23 @@
+<!--- javascript specific files for the slide view -->
+
+<div id="bg">
+    <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
+    <%= image_tag "regular/#{@style1.name}.jpg", :size => "310x483", :id => "previmg"  %>
+    <%= image_tag "regular/#{@style2.name}.jpg", :size => "310x483", :id => "bgimg"  %>
+    <%= image_tag "regular/#{@style3.name}.jpg", :size => "310x483", :id => "nextimg"  %>
+</div>
+<div id="thumbnails_wrapper">
+    <div id="outer_container">
+        <div class="thumbScroller">
+            <div class="container">
+				 <% @styles.each do |style| %>	
+					<div class="content">
+						<div><%= link_to image_tag("thumbnails/#{style.name}.jpg", :class => "thumb"), asset_path("regular/#{style.name}.jpg") %></a></div>
+					</div>	
+				<% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= javascript_include_tag 'slide' %>

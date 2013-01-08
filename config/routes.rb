@@ -1,6 +1,7 @@
 TadashiShojiWebsite::Application.routes.draw do
   
   get "catalog/grid"
+  get "catalog/slide"
 
   resources :styles
 
