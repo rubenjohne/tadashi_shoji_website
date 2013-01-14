@@ -8,6 +8,7 @@ gem 'rails', '3.2.7'
 
 group :production do
   gem 'pg'
+  gem 'faker', :require => false
 end
 
 group :development do 
