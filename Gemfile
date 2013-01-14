@@ -13,7 +13,7 @@ end
 group :development do 
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails'
-  gem 'faker'
+  gem 'faker', :require => false
 end
 
 group :test do
