@@ -8,7 +8,7 @@ describe StylesController do
     describe "GET 'index'" do
       
       it "should not be successful" do
-        get :index
+        get :index, :collection_id => 1
         response.should_not be_success
       end
       
@@ -17,7 +17,7 @@ describe StylesController do
     describe "GET 'new'" do
       
       it "should not be successful" do
-        get :new 
+        get :new, :collection_id => 1 
         response.should_not be_success
       end
       
@@ -35,13 +35,13 @@ describe StylesController do
       end
       
       it "should not be successful" do
-        post :create, :style => @attr
+        post :create, :style => @attr, :collection_id => 1
         response.should_not be_success
       end
       
       it "should not change record count" do
         lambda do
-          post :create, :style => @attr
+          post :create, :style => @attr, :collection_id => 1
         end.should_not change(Style, :count)
       end
       
@@ -54,7 +54,7 @@ describe StylesController do
       end
       
       it "should not be successful" do
-        get :edit, :id => @style
+        get :edit, :id => @style, :collection_id => 1
         response.should_not be_success
       end
       
@@ -68,7 +68,7 @@ describe StylesController do
       
       it "should not be successful" do
         @style.name = "ABC"
-        put :update, :id => @style, :style => @style
+        put :update, :id => @style, :style => @style, :collection_id => 1
         @style.reload
         @style.name.should_not ==  "ABC"
       end
@@ -83,7 +83,7 @@ describe StylesController do
       
       it "should not be successful" do
         lambda do
-          delete :destroy, :id => @style 
+          delete :destroy, :id => @style, :collection_id => 1 
         end.should_not change(Style,:count)
       end
       
@@ -96,7 +96,7 @@ describe StylesController do
       end
       
       it "should not be successful" do
-        get :show, :id => @style
+        get :show, :id => @style, :collection_id => 1
         response.should_not be_success
       end
       
@@ -110,17 +110,25 @@ describe StylesController do
       @user = Factory(:user)
       test_sign_in(@user)
       @style = Factory(:style)
+      @collection = Factory(:collection)
     end
      
     describe "GET 'index'" do
       
       it "should be successful" do
-        get :index
+        get :index, :collection_id => @style.collection_id
         response.should be_success
       end
       
+      it "should be nested with collections" do
+        get :index, :collection_id => @style.collection_id
+        controller.params[:collection_id].should_not be_nil
+      end
+      
+      it "should load styles on the collection"
+      
       it "should get all the styles" do
-        get :index
+        get :index, :collection_id => @style.collection_id 
         assigns(:styles).should_not be_nil
       end
       
@@ -129,7 +137,7 @@ describe StylesController do
     describe "GET 'new'" do
       
       it "should be successful" do
-        get :new 
+        get :new, :collection_id => @style.collection_id 
         response.should be_success
       end
       
@@ -147,13 +155,13 @@ describe StylesController do
       end
       
       it "should redirect to the new style" do
-        post :create, :style => @attr
+        post :create, :style => @attr, :collection_id => 1
         response.should redirect_to(assigns(:style))
       end
       
       it "should change record count" do
         lambda do
-          post :create, :style => @attr
+          post :create, :style => @attr, :collection_id => 1
         end.should change(Style, :count).by(1)
       end
       
@@ -162,7 +170,7 @@ describe StylesController do
     describe "GET 'edit'" do
            
       it "should be successful" do
-        get :edit, :id => @style
+        get :edit, :id => @style, :collection_id => 1
         response.should be_success
       end
       
@@ -181,7 +189,7 @@ describe StylesController do
                  :collection_id => 1,
                  :color_id => 1,
                  :size_id => 1}
-        put :update, :id => @style, :style => @attr
+        put :update, :id => @style, :style => @attr, :collection_id => 1
         @style.reload
         @style.name.should ==  "EI8575L"
       end
@@ -196,7 +204,7 @@ describe StylesController do
       
       it "should be successful" do
         lambda do
-          delete :destroy, :id => @style
+          delete :destroy, :id => @style, :collection_id => 1
         end.should change(Style, :count).by(-1)  
       end
       

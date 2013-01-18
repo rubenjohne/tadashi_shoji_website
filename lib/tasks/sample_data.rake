@@ -11,7 +11,7 @@ namespace :db do
       :email => "user@example.com",
       :password => "user1234")
    
-    # create sample collections 
+    # create sample collections   
     Collection.create!(:collection => "Test Collection 1")
     Collection.create!(:collection => "2 Test Collection")
     Collection.create!(:collection => "3rd Test Collection")    

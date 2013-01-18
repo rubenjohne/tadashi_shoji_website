@@ -4,7 +4,9 @@ class StylesController < ApplicationController
   
   # GET styles/
   def index 
-    @styles = Style.all
+    # get the styles in the collection 
+    @collection = Collection.find(params[:collection_id])
+    @styles = @collection.styles
   end
   
   # GET styles/new/
@@ -23,7 +25,7 @@ class StylesController < ApplicationController
     
     respond_to do |format|
       if @style.save 
-        format.html { redirect_to style_path(@style.id) }
+        format.html { redirect_to collection_style_path(@style.id) }
       else 
         format.html { render :action => :new}  
       end
@@ -41,7 +43,7 @@ class StylesController < ApplicationController
     
     respond_to do |format|
       if @style.update_attributes(params[:style])
-        format.html { redirect_to style_url(@style) }
+        format.html { redirect_to collection_style_url(@style) }
       else
         format.html { render :action => "edit" }
       end
@@ -54,7 +56,7 @@ class StylesController < ApplicationController
     @style = Style.find(params[:id])
     @style.destroy
     respond_to do |format|
-      format.html { redirect_to styles_url }
+      format.html { redirect_to collection_styles_url }
     end
   end
       

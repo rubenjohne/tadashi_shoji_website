@@ -1,24 +1,28 @@
-<h1>Styles</h1>
+<h1><%= @collection.collection %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Color</th>
-    <th>Collection</th>
-    <th>Size</th>
+	<th>Base</th>
+	<th>Small</th>
+	<th>Thumbnail</th>
+    <th style="width:150px;">Name</th>
+    <th style="width:250px;">Description</th>
+    <th style="width:150px;">Color</th>
+    <th style="width:150px;">Size</th>
   </tr>
 
 <% @styles.each do |style| %>
-    <tr>
-        <td><%=  style.name %></td>
-        <td><%=  style.description %></td>
-        <td><%=  Color.exists?(style.color_id)  ? Color.find(style.color_id).color_code : "" %></td>
-        <td><%=  Collection.exists?(style.collection_id) ? Collection.find(style.collection_id).collection : "" %></td>
-        <td><%=  Size.exists?(style.size_id) ? Size.find(style.size_id).size_code : "" %></td>
-        <td><%=  link_to 'Show', style_path(style) %></td>
-        <td><%=  link_to 'Edit', edit_style_path(style) %></td>
-        <td><%=  button_to 'Destroy', style_path(style), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    <tr class="styles-row">
+		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
+		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
+		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
+        <td style="width:150px;"><%=  style.name %></td>
+        <td style="width:250px;"><%=  style.description %></td>
+        <td style="width:150px;"><%=  Color.exists?(style.color_id)  ? Color.find(style.color_id).color_code : "" %></td>
+        <td style="width:150px;"><%=  Size.exists?(style.size_id) ? Size.find(style.size_id).size_code : "" %></td>
+        <td><%=  link_to 'Show', collection_style_path(style.collection_id, style) %></td>
+        <td><%=  link_to 'Edit', edit_collection_style_path(style.collection_id, style) %></td>
+        <td><%=  button_to 'Destroy', collection_style_path(style.collection_id, style), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
     </tr>
 <% end  %>
 
@@ -26,4 +30,4 @@
 </table>
 
 
-<%=  link_to 'New style', new_style_path %>
+<%=  link_to 'New style', new_collection_style_path %>

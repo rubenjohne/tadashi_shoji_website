@@ -2,7 +2,7 @@ class CollectionsController < ApplicationController
   before_filter :authenticate
   layout 'admin'
   
-  # GET /collections
+  # GET /collections  
   def index
     @collections = Collection.all
   end

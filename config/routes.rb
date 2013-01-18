@@ -3,8 +3,7 @@ TadashiShojiWebsite::Application.routes.draw do
   get "catalog/grid"
   get "catalog/slide"
 
-  resources :styles
-
+  
   resources :colors
 
   resources :sizes
@@ -13,7 +12,9 @@ TadashiShojiWebsite::Application.routes.draw do
 
   resources :users
 
-  resources :collections
+  resources :collections do |styles|
+    resources :styles
+  end
   
   resources :sessions, :only => [:new, :create, :destroy]
 

@@ -1,6 +1,6 @@
 <h1>Editing Style</h1>
 
-<%= form_for :style, :url => style_path(@style),
+<%= form_for :style, :url => collection_style_path(@style),
  			:html => { :method => :put } do |f| %>
 
 	<fieldset>
@@ -14,5 +14,5 @@
   
 <% end %>
 
-<%= link_to 'Show', style_path(@style) %> |
-<%= link_to 'Back',  style_path %>
+<%= link_to 'Show', collection_style_path(@style) %> |
+<%= link_to 'Back',  collection_styles_path %>
