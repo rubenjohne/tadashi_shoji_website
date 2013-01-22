@@ -22,6 +22,7 @@
         <td style="width:150px;"><%=  Size.exists?(style.size_id) ? Size.find(style.size_id).size_code : "" %></td>
         <td><%=  link_to 'Show', collection_style_path(style.collection_id, style) %></td>
         <td><%=  link_to 'Edit', edit_collection_style_path(style.collection_id, style) %></td>
+        <td><%=  link_to 'Images', collection_style_product_images_path(style.collection_id, style.id) %></td>
         <td><%=  button_to 'Destroy', collection_style_path(style.collection_id, style), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
     </tr>
 <% end  %>

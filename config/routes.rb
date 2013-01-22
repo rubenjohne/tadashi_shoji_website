@@ -12,8 +12,10 @@ TadashiShojiWebsite::Application.routes.draw do
 
   resources :users
 
-  resources :collections do |styles|
-    resources :styles
+  resources :collections do |collections|
+    resources :styles do |styles|
+      resources :product_images 
+    end  
   end
   
   resources :sessions, :only => [:new, :create, :destroy]

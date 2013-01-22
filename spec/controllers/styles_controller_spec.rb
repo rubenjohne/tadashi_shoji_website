@@ -156,7 +156,7 @@ describe StylesController do
       
       it "should redirect to the new style" do
         post :create, :style => @attr, :collection_id => 1
-        response.should redirect_to(assigns(:style))
+        response.should redirect_to collection_style_path(1, assigns(:style))
       end
       
       it "should change record count" do
@@ -208,6 +208,7 @@ describe StylesController do
         end.should change(Style, :count).by(-1)  
       end
       
+      it "should delete the product images too"
       
     end  
         

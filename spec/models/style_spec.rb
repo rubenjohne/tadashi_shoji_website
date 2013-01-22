@@ -18,6 +18,10 @@ describe Style do
       Style.new.should respond_to(:collection)
     end
     
+    it "should have a product images attribute" do
+      Style.new.should respond_to(:product_images)
+    end
+    
   end
   
   describe "model attribute validations" do
@@ -62,9 +66,6 @@ describe Style do
     end
       
   end
-  
-  pending "it should require a color"
-  pending "it should require a size"
-  pending "it should require a collection"
+
   
 end

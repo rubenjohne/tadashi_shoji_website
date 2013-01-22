@@ -30,3 +30,8 @@ Factory.define :style do |style|
   style.size_id         1
 end
 
+Factory.define :product_image_base do |product_image|
+  product_image.image_filename      "blank.png"
+  product_image.image_type          1
+  product_image.label               "base"  
+end  

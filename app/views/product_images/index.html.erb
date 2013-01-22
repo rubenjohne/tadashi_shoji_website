@@ -1,0 +1,36 @@
+<h1>Style : <%= @style.name %></h1>
+<h1>Color : <%= @color.color_name %></h1>
+
+
+<section id="product-images">
+	
+	<div class="images">		
+		<% if @product_image_base.nil? %>
+			<!--- if the images are available display it here else display a blank png and render the new form -->		
+			<%= image_tag "blank.png", :size => "120x180" %>
+			<%= form_for(:product_image, :url => collection_style_product_images_path) do |f| %>
+				<%= render :partial => "form", :locals => {:f => f, :image_assigned_type => 1} %>								
+			<% end %>	
+		<% elsif %>			
+			<!--- the image should be and available display it here and render the edit form -->				
+			<!--- display image file via the img tag would like to change it to image_tag later but it won't let me upload in the assets folder-->
+			<img src="../../../../../uploads/<%= @product_image_base.style.collection.collection %>/<%=  @product_image_base.image_filename %>"
+				 width="220" height="330">
+			<%= form_for :product_image, :url => collection_style_product_image_path(:product_image),
+			 			:html => { :method => :put } do |f| %>		
+				<%= render :partial => "edit_form", :locals => {:product_image => @product_image_base, :image_assigned_type => 1} %>						
+			<% end %>
+				
+		<% end %>	
+	</div>
+	
+	<div class="images">
+
+	</div>
+
+	<div class="images">
+
+	</div>
+	
+		
+</section>	

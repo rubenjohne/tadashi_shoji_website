@@ -25,7 +25,7 @@ class StylesController < ApplicationController
     
     respond_to do |format|
       if @style.save 
-        format.html { redirect_to collection_style_path(@style.id) }
+        format.html { redirect_to collection_style_path(@style.collection_id, @style) }
       else 
         format.html { render :action => :new}  
       end

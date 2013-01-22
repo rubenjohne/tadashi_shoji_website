@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<th>File :</th>
+		<td><%= f.file_field :image_filename %></td>
+	</tr>	
+	<tr>
+		<th>Label :</th>
+		<td><%= f.text_field :label %></td>
+	</tr>	
+	<tr>
+		<td><%= f.hidden_field :image_type, :value => image_assigned_type %></td>
+		<td><%= submit_tag  %></td>
+	</tr>	
+</table>
