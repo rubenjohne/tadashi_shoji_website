@@ -25,7 +25,7 @@ class ProductImagesController < ApplicationController
     @product_image = @style.product_images.build(params[:product_image])
     @product_image.image_filename = params[:product_image][:image_filename].original_filename unless params[:product_image][:image_filename].nil?
     # delete previous image_type images there could only be one type per image
-    @product_images_same_type = ProductImage.find_by_image_type(@product_image.image_type)
+    @product_images_same_type = @style.product_images.find_by_image_type(@product_image.image_type)
     unless @product_images_same_type.nil?
       @product_images_same_type.destroy
     end  

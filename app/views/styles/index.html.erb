@@ -13,9 +13,50 @@
 
 <% @styles.each do |style| %>
     <tr class="styles-row">
-		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
-		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
-		<td><%= image_tag "blank.png", :size => "138x215", :alt => "" %></td>
+		<!--- initialize variables here -->
+		<%
+			collection = style.collection
+			product_image_base = nil
+			product_image_small = nil
+			product_image_thumbnail = nil
+		%>
+		<!--- get images from styles -->
+		<% style.product_images.each do |product_image| 
+			if product_image.image_type == 1 
+				product_image_base = product_image
+			elsif product_image.image_type == 2
+				product_image_small = product_image
+			else
+				product_image_thumbnail = product_image
+			end				
+		end %>
+		<!--- display base image here -->
+		<td>
+			<% unless product_image_base.nil? %>
+				<img src="../../../../../uploads/<%= collection.collection %>/<%=  product_image_base.image_filename %>"
+					 width="120" height="180">			
+			<% else %>
+				<%= image_tag "blank.png", :size => "120x180" %>
+			<% end %>
+		</td>	
+		<!--- display small image here -->
+		<td>
+			<% unless product_image_small.nil? %>
+				<img src="../../../../../uploads/<%= collection.collection %>/<%=  product_image_small.image_filename %>"
+					 width="120" height="180">			
+			<% else %>
+				<%= image_tag "blank.png", :size => "120x180" %>
+			<% end %>
+		</td>	
+		<!--- display thumbnail image here -->
+		<td>
+			<% unless product_image_thumbnail.nil? %>
+				<img src="../../../../../uploads/<%= collection.collection %>/<%=  product_image_thumbnail.image_filename %>"
+					 width="120" height="180">			
+			<% else %>
+				<%= image_tag "blank.png", :size => "120x180" %>
+			<% end %>
+		</td>	
         <td style="width:150px;"><%=  style.name %></td>
         <td style="width:250px;"><%=  style.description %></td>
         <td style="width:150px;"><%=  Color.exists?(style.color_id)  ? Color.find(style.color_id).color_code : "" %></td>
