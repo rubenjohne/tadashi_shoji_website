@@ -1,9 +1,5 @@
 TadashiShojiWebsite::Application.routes.draw do
   
-  get "catalog/grid"
-  get "catalog/slide"
-
-  
   resources :colors
 
   resources :sizes
@@ -13,7 +9,7 @@ TadashiShojiWebsite::Application.routes.draw do
   resources :users
 
   resources :collections do |collections|
-    resources :styles do |styles|
+    resources :styles do |styles| 
       resources :product_images 
     end  
   end
@@ -23,6 +19,9 @@ TadashiShojiWebsite::Application.routes.draw do
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
+  match 'catalog/grid/:id' => "catalog#grid"
+  match 'catalog/slide/:id' => "catalog#slide"
+
   
   match '/', :to => 'pages#home'
   
