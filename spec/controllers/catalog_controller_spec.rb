@@ -15,6 +15,7 @@ describe CatalogController do
     it "should be succcessful"    
     it "should load the necessary javascripts"
     it "should get the first 3 styles in the collection"
+    it "should redirect to grid view if there is less than 3 styles in the collection"
     
     
   end  

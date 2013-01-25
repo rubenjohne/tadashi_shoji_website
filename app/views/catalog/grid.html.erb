@@ -1,26 +1,37 @@
 <ul class="styles">
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       
+	
+	<%
+		#grab the styles product image and collection information
+		collection = style.collection.collection
+		product_image = style.product_images.find_by_image_type(2)
+		unless product_image.nil?
+			small_image = product_image.image_filename
+		else
+			small_image = "blank.png"	
+		end	
+	%>	
 
      <% if  trueIndex == 1 %>
         <ul>
         <li>
-          <%= image_tag "regular/#{style.name}.jpg" %>
+			<img src="../../../../../uploads/<%= @collection.collection %>/<%=  small_image %>">				
         </li>
     <% elsif trueIndex == @styles.size %>
         <li>
-          <%= image_tag "regular/#{style.name}.jpg" %>
+			<img src="../../../../../uploads/<%= @collection.collection %>/<%=  small_image %>">				
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li>
-          <%= image_tag "regular/#{style.name}.jpg" %>
+			<img src="../../../../../uploads/<%= @collection.collection %>/<%=  small_image %>">				
         </li>
         </ul>
         <ul>
      <% else %>
         <li>
-          <%= image_tag "regular/#{style.name}.jpg" %>
+			<img src="../../../../../uploads/<%= @collection.collection %>/<%=  small_image %>">				
         </li>
      <% end %>
   <% end %>
