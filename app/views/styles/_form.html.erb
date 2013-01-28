@@ -14,7 +14,7 @@
 	<tr>
 		<th>Collection:</th>
 		<td><%= collection_select(:style, :collection_id, Collection.all, :id, :collection, :prompt => true) %></td>
-	</tr>	
+	</tr>
 	<tr>
 		<th>Size:</th>
 		<td><%= collection_select(:style, :size_id, Size.all, :id, :size_code, :prompt => true) %></td>

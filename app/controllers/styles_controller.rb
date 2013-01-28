@@ -12,6 +12,7 @@ class StylesController < ApplicationController
   # GET styles/new/
   def new
     @style = Style.new
+    @style.collection_id = params[:collection_id]
   end
   
   # GET styles/:id
