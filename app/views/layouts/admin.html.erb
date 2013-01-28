@@ -9,6 +9,13 @@
 	<header>
 		<% if signed_in? %>
 			<%= link_to "Sign out", signout_path, :class => "signout_link" %>
+			<div id="admin_links">
+				<ul>
+					<li><%= link_to "Collections", collections_path %></li>
+					<li><%= link_to "Colors", colors_path %></li>
+					<li><%= link_to "Sizes", sizes_path %></li>
+				</ul>
+			</div>
 		<% end %>	
 	</header>	
 	<body>
