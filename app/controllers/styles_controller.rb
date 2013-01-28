@@ -46,6 +46,7 @@ class StylesController < ApplicationController
       if @style.update_attributes(params[:style])
         format.html { redirect_to collection_style_url(@style) }
       else
+        flash[:error] = @style.errors.full_messages.to_s
         format.html { render :action => "edit" }
       end
     end

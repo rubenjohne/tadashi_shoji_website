@@ -64,6 +64,11 @@ describe Style do
       no_size_style = Style.new(@attr.merge(:size_id => ""))
       no_size_style.should_not be_valid
     end
+    
+    it "should enforce that the position is an integer" do
+      invalid_position_style = Style.new(@attr.merge(:position => "abc"))
+      invalid_position_style.should_not be_valid
+    end
       
   end
 

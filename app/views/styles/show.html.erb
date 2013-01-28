@@ -5,6 +5,7 @@
 		<th>Description</th>
 		<th>Color</th>
 		<th>Size</th>
+		<th>Position</th>
 	</tr>	
 	<tr>
 		<td><%= @style.name %></td>
@@ -12,6 +13,7 @@
 		<td><%= @style.description %></td>
 		<td><%= Color.exists?(@style.color_id)  ? Color.find(@style.color_id).color_code : "" %></td>
 		<td><%= Size.exists?(@style.size_id) ? Size.find(@style.size_id).size_code : ""  %></td>
+		<td><%= @style.position %></td>
 	</tr>	
 </table>
 	

@@ -29,12 +29,14 @@ namespace :db do
       name = "#{n+1}"
       description = Faker::Lorem.words
       price = 99.99
+      position = n + 1
       Style.create!(:name => name,
                     :collection_id => 1,
                     :color_id => 1,
                     :size_id => 1,
                     :description => description,
-                    :price => price)
+                    :price => price,
+                    :position => position)
     end
                     
   end 

@@ -132,6 +132,8 @@ describe StylesController do
         assigns(:styles).should_not be_nil
       end
       
+      it "should be ordered by position"
+      
     end
 
     describe "GET 'new'" do
@@ -151,7 +153,8 @@ describe StylesController do
                  :description => "chiffon beaded gown",
                  :collection_id => 1,
                  :color_id => 1,
-                 :size_id => 1}
+                 :size_id => 1,
+                 :position => 1}
       end
       
       it "should redirect to the new style" do
@@ -188,7 +191,8 @@ describe StylesController do
                  :description => "chiffon beaded gown",
                  :collection_id => 1,
                  :color_id => 1,
-                 :size_id => 1}
+                 :size_id => 1,
+                 :position => 1}
         put :update, :id => @style, :style => @attr, :collection_id => 1
         @style.reload
         @style.name.should ==  "EI8575L"

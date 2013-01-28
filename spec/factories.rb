@@ -28,6 +28,7 @@ Factory.define :style do |style|
   style.collection_id   1
   style.color_id        1
   style.size_id         1
+  style.position        1
 end
 
 Factory.define :product_image do |product_image|

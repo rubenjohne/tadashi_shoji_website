@@ -1,5 +1,7 @@
 <h1><%= @collection.collection %></h1>
 
+<%=  link_to 'New style', new_collection_style_path %>
+
 <table>
   <tr>
 	<th>Base</th>
@@ -9,6 +11,7 @@
     <th style="width:250px;">Description</th>
     <th style="width:150px;">Color</th>
     <th style="width:150px;">Size</th>
+    <th style="width:150px;">Position</th>
   </tr>
 
 <% @styles.each do |style| %>
@@ -61,6 +64,7 @@
         <td style="width:250px;"><%=  style.description %></td>
         <td style="width:150px;"><%=  Color.exists?(style.color_id)  ? Color.find(style.color_id).color_code : "" %></td>
         <td style="width:150px;"><%=  Size.exists?(style.size_id) ? Size.find(style.size_id).size_code : "" %></td>
+        <td style="width:150px;"><%=  style.position %></td>
         <td><%=  link_to 'Show', collection_style_path(style.collection_id, style) %></td>
         <td><%=  link_to 'Edit', edit_collection_style_path(style.collection_id, style) %></td>
         <td><%=  link_to 'Images', collection_style_product_images_path(style.collection_id, style.id) %></td>
