@@ -2,9 +2,9 @@
 
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
-	<img src="../../../../../uploads/<%= @collection.collection %>/<%=  @previmg %>" width="310" height="483" id="previmg">				
-	<img src="../../../../../uploads/<%= @collection.collection %>/<%=  @bgimg %>" width="310" height="483" id="bgimg">				
-	<img src="../../../../../uploads/<%= @collection.collection %>/<%=  @nextimg %>" width="310" height="483" id="nextimg">				
+	<img src="/uploads/<%= @collection.collection %>/<%=  @previmg %>" width="310" height="483" id="previmg">				
+	<img src="/uploads/<%= @collection.collection %>/<%=  @bgimg %>" width="310" height="483" id="bgimg">				
+	<img src="/uploads/<%= @collection.collection %>/<%=  @nextimg %>" width="310" height="483" id="nextimg">				
 
 
 	<!--- old implementation 
@@ -38,8 +38,8 @@
 						%>
 						<!--- create the link manually and display the image -->				
 						<div>
-							<a href="../../../../../uploads/<%= @collection.collection %>/<%= base %>" >
-								<img class="thumb" src="../../../../../uploads/<%= @collection.collection %>/<%= thumbnail %>" >
+							<a href="/uploads/<%= @collection.collection %>/<%= base %>" >
+								<img class="thumb" src="/uploads/<%= @collection.collection %>/<%= thumbnail %>" >
 							</a>	
 						</div>				
 						<!--- old implementation

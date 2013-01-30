@@ -30,6 +30,7 @@ a
 
 header {
  	height:81px;	
+	background: url("/assets/logoBar.png") no-repeat transparent;
 	.signout_link { 
 		position:fixed;
 		right: 5px;
@@ -39,7 +40,7 @@ header {
 
 nav {
 	height:19px;	
-	background: url("/assets/nav_bg.png") no-repeat transparent;
+	background: url("/assets/menuBar.png") no-repeat transparent;
 	a {
 		color: #000000;
 	}
