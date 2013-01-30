@@ -49,7 +49,7 @@ class ProductImagesController < ApplicationController
   # method to updload the file
   def upload_file(uploaded_file, product_image)
     # check if directory exist if not create it use the helper to create the folder
-    directory_name = Rails.root.join('public', 'uploads', product_image.style.collection.collection)
+    directory_name = Rails.root.join('public', 'uploads', product_image.style.collection.id.to_s)
     create_directory_if_not_exist(directory_name)    
     unless uploaded_file.nil?    
       File.open(directory_name.join(product_image.image_filename), 'wb') do |file|
