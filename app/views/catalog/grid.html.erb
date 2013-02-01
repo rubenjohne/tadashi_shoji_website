@@ -27,30 +27,30 @@
      <% if  trueIndex == 1 %>
         <ul>
         <li>
-			<a href="/uploads/<%= @collection.collection %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.collection %>/<%=  small_image %>">
+			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
+				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
 			</a>					
         </li>
     <% elsif trueIndex == @styles.size %>
         <li>
-			<a href="/uploads/<%= @collection.collection %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.collection %>/<%=  small_image %>">
+			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
+				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
 			</a>					
 	        </li>
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li>
-			<a href="/uploads/<%= @collection.collection %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.collection %>/<%=  small_image %>">
+			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
+				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
 			</a>	
         </li>
         </ul>
         <ul>
      <% else %>
         <li>
-			<a href="/uploads/<%= @collection.collection %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.collection %>/<%=  small_image %>">
+			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
+				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
 			</a>	
         </li>
      <% end %>
