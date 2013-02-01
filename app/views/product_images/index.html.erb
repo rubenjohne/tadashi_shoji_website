@@ -11,7 +11,7 @@
 			<!--- if the images are available display it here else display a blank png and render the new form -->		
 			<%= image_tag "blank.png", :size => "220x330" %>
 		<% elsif %>
-			<img src="../../../../../uploads/<%= @product_image_base.style.collection.collection %>/<%=  @product_image_base.image_filename %>"
+			<img src="/uploads/<%= @product_image_base.style.collection.id %>/<%=  @product_image_base.image_filename %>"
 				 width="220" height="330">			
 		<% end %>			
 		<%= render :partial => "new_form", :locals => { :product_image => @product_image_base, :image_assigned_type => 1} %>								
@@ -23,7 +23,7 @@
 			<!--- if the images are available display it here else display a blank png and render the new form -->		
 			<%= image_tag "blank.png", :size => "220x330" %>
 		<% elsif %>
-			<img src="../../../../../uploads/<%= @product_image_small.style.collection.collection %>/<%=  @product_image_small.image_filename %>"
+			<img src="/uploads/<%= @product_image_small.style.collection.id %>/<%=  @product_image_small.image_filename %>"
 				 width="220" height="330">			
 		<% end %>			
 		<%= render :partial => "new_form", :locals => { :product_image => @product_image_small, :image_assigned_type => 2} %>								
@@ -35,7 +35,7 @@
 			<!--- if the images are available display it here else display a blank png and render the new form -->		
 			<%= image_tag "blank.png", :size => "220x330" %>
 		<% elsif %>
-			<img src="../../../../../uploads/<%= @product_image_thumbnail.style.collection.collection %>/<%=  @product_image_thumbnail.image_filename %>"
+			<img src="/uploads/<%= @product_image_thumbnail.style.collection.id %>/<%=  @product_image_thumbnail.image_filename %>"
 				 width="220" height="330">			
 		<% end %>			
 		<%= render :partial => "new_form", :locals => { :product_image => @product_image_thumbnail, :image_assigned_type => 3} %>								
