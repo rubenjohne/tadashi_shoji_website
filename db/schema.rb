@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128222644) do
+ActiveRecord::Schema.define(:version => 20130205003739) do
 
   create_table "collections", :force => true do |t|
     t.string   "collection"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20130128222644) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "countries", :force => true do |t|
+    t.string   "country_name"
+    t.boolean  "international", :default => true
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
   create_table "product_images", :force => true do |t|
     t.string   "image_filename"
     t.integer  "image_type"
@@ -35,11 +42,34 @@ ActiveRecord::Schema.define(:version => 20130128222644) do
     t.integer  "style_id"
   end
 
+  create_table "retailers", :force => true do |t|
+    t.string   "store"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.integer  "country_id"
+    t.integer  "state_id"
+    t.string   "zip_code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+  end
+
   create_table "sizes", :force => true do |t|
     t.string   "size_code"
     t.string   "size_description"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "state_code"
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "country_id"
   end
 
   create_table "styles", :force => true do |t|

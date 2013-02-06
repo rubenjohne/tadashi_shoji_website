@@ -1,0 +1,34 @@
+<table>
+	<tr>
+		<th>Store:</th>
+		<td><%= f.text_field :store, :class => "text_field "%></td>
+	</tr>
+	<tr>
+		<th>Address 1:</th>
+		<td><%= f.text_field :address1, :class => "text_field "%></td>
+	</tr>
+	<tr>
+		<th>Address 2:</th>
+		<td><%= f.text_field :address2, :class => "text_field "%></td>
+	</tr>
+	<tr>
+		<th>City:</th>
+		<td><%= f.text_field :city, :class => "text_field "%></td>
+	</tr>
+	<tr>
+		<th>State:</th>
+		<td><%= collection_select(:retailer, :state_id, State.all, :id, :state, :prompt => true ) %></td>
+	</tr>
+	<tr>
+		<th>Zip Code:</th>
+		<td><%= f.text_field :zip_code, :class => "text_field "%></td>
+	</tr>
+	<tr>
+		<th>Country:</th>
+		<td><%= collection_select(:retailer, :country_id, Country.all, :id, :country_name, :prompt => true ) %></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><%= submit_tag "Save changes", :id => "submit", :name => "submit", :class => "form_submit", :disabled => false, :disable_with => "Please wait..." %></td>
+	</tr>	
+</table>

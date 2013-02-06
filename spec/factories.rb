@@ -37,3 +37,27 @@ Factory.define :product_image do |product_image|
   product_image.label               "base"  
   product_image.style_id            1
 end  
+
+Factory.define :country do |country|
+  country.id                    1
+  country.country_name          "United States"
+  country.international         false
+end  
+
+Factory.define :state do |state|
+  state.country_id    1
+  state.id            1
+  state.state_code    "CA"
+  state.state         "California"
+end
+
+Factory.define :retailer do |retailer|
+  retailer.store        "Tadashi Shoji"
+  retailer.address1     "3016 E 44th St"
+  retailer.address2     ""
+  retailer.city         "Vernon"
+  retailer.state_id     1
+  retailer.zip_code     "90058"
+  retailer.country_id   1  
+end
+  

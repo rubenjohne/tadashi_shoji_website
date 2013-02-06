@@ -1,0 +1,5 @@
+<%= form_for :state, :url => country_state_path(@state), :html => { :method => :put } do |f| -%>
+  
+	<%= render :partial => :form, :locals => {:f => f} %>
+	
+<% end -%>

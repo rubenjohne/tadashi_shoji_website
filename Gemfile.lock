@@ -47,6 +47,7 @@ GEM
       rails (>= 3.0.0.beta4)
     faker (1.1.2)
       i18n (~> 0.5)
+    gmaps4rails (1.5.6)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -134,6 +135,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl_rails (= 1.0)
   faker
+  gmaps4rails
   jquery-rails
   pg
   rails (= 3.2.7)

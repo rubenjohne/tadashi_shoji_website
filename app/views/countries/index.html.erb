@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th>Country</th>
+		<th>International</th>
+	</tr>	
+<% @countries.each do |country| %>
+	<tr>
+		<td><%= country.country_name %></td>
+		<td><%= country.international %></td>
+		<td><%= link_to "Show", country_path(country) %></td>
+		<td><%= link_to "Edit", edit_country_path(country) %></td>
+		<td><%= link_to "States", country_states_path(country) %></td>
+		<td><%= button_to "Destroy", country_path(country), :data => {:confirm => "Are you sure?"}, :method => :delete %>	
+	</tr>
+<% end %>	
+</table>
+
+<%= link_to "Create new country", new_country_path %>

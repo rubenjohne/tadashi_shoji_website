@@ -1,0 +1,19 @@
+<h1>States</h1>
+
+<%= link_to "Create new State", new_country_state_path %>
+<table>
+	<tr>
+		<th>State Code</th>
+		<th>State</th>
+	</tr>	
+	<% @states.each do |state| %>
+		<tr>
+			<td><%= state.state_code %></td>
+			<td><%= state.state %></td>
+			<td><%= link_to "Show", country_state_path(state.country_id, state )%></td>
+			<td><%= link_to "Edit", edit_country_state_path(state.country_id, state )%></td>
+			<td><%= button_to "Destroy", country_state_path(state.country_id, state), :data => {:confirm => "Are you sure?"}, :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>	
+

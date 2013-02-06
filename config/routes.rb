@@ -1,5 +1,12 @@
 TadashiShojiWebsite::Application.routes.draw do
   
+
+  resources :retailers
+
+  resources :countries do |country|
+    resources :states    
+  end
+
   resources :colors
 
   resources :sizes

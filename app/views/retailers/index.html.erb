@@ -1,0 +1,35 @@
+<h1>Retailers</h1>
+
+<%= link_to "Create new Retailer", new_retailer_path %>
+
+<table>
+	<tr>
+		<th>store</th>
+		<th>address1</th>
+		<th>address2</th>
+		<th>city</th>
+		<th>country</th>
+		<th>state</th>
+		<th>zip code</th>
+		<th>latitude</th>
+		<th>longitude</th>
+		<th>gmaps</th>
+	</tr>	
+	
+	<% @retailers.each do |retailer| %>
+		<tr>
+			<td><%= retailer.store %></td>	
+			<td><%= retailer.address1 %></td>	
+			<td><%= retailer.address2 %></td>	
+			<td><%= retailer.city %></td>	
+			<td><%= retailer.country.country_name %></td>	
+			<td><%= retailer.state.state_code %></td>	
+			<td><%= retailer.zip_code %></td>	
+			<td><%= retailer.latitude %></td>	
+			<td><%= retailer.longitude %></td>	
+			<td><%= retailer.gmaps %></td>	
+			<td><%= link_to "Show", retailer_path(retailer) %></td>
+		</tr>	
+	<% end %>
+
+</table>	
