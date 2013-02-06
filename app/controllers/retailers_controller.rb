@@ -32,4 +32,29 @@ class RetailersController < ApplicationController
     @retailer_map = @retailer.to_gmaps4rails
   end
   
+  def edit
+    @retailer = Retailer.find(params[:id])
+  end
+  
+  def update
+    @retailer = Retailer.find(params[:id])
+    
+    respond_to do |format|
+      if @retailer.update_attributes(params[:retailer])
+        format.html { redirect_to retailer_path(@retailer) }
+      else
+        format.html { render :action => :edit }  
+      end  
+    end  
+    
+  end
+  
+  def destroy
+    @retailer = Retailer.find(params[:id])
+    @retailer.destroy
+    respond_to do |format|
+      format.html { redirect_to retailers_path }
+    end  
+  end
+  
 end

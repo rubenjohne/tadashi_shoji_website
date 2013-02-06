@@ -1,4 +1,7 @@
 <h1><%= @retailer.store %></h1>
 
+<%= link_to "back", retailers_path  %>
+
+
 <%= debug(@retailer_map)%>
 <%= gmaps4rails(@retailer_map) %>

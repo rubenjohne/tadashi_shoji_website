@@ -29,6 +29,8 @@
 			<td><%= retailer.longitude %></td>	
 			<td><%= retailer.gmaps %></td>	
 			<td><%= link_to "Show", retailer_path(retailer) %></td>
+			<td><%= link_to "Edit", edit_retailer_path(retailer) %></td>
+			<td><%= button_to "Destroy", retailer_path(retailer), :data => { :confirm => "Are you sure?" }, :method => :delete %>
 		</tr>	
 	<% end %>
 
