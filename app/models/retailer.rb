@@ -10,12 +10,12 @@ class Retailer < ActiveRecord::Base
 
   
   def gmaps4rails_address
-    "#{self.address1} #{self.address2} #{self.city}, #{self.state.state_code} #{self.zip_code} #{self.country.country_name}" 
+    "#{self.address1} #{self.address2} #{self.city}, #{self.state.state_code unless self.state.nil? } #{self.zip_code} #{self.country.country_name}" 
   end
   
   def gmaps4rails_infowindow
     # OPTIMIZE 
-    "<b>#{self.store}</b><br/>#{self.address1}<br/>#{self.address2}  #{'<br/>' unless self.address2 == ''}#{self.city}, #{self.state.state_code} #{self.zip_code}"
+    "<b>#{self.store}</b><br/>#{self.address1}<br/>#{self.address2}  #{'<br/>' unless self.address2 == ''}#{self.city}, #{self.state.state_code unless self.state.nil?} #{self.zip_code}"
   end
   
 end
