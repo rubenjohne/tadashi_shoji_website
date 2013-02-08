@@ -2,16 +2,9 @@
 
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
-	<img src="/uploads/<%= @collection.collection %>/<%=  @previmg %>" width="310" height="483" id="previmg">				
-	<img src="/uploads/<%= @collection.collection %>/<%=  @bgimg %>" width="310" height="483" id="bgimg">				
-	<img src="/uploads/<%= @collection.collection %>/<%=  @nextimg %>" width="310" height="483" id="nextimg">				
-
-
-	<!--- old implementation 
-    <%= image_tag "regular/#{@style1.name}.jpg", :size => "310x483", :id => "previmg"  %>
-    <%= image_tag "regular/#{@style2.name}.jpg", :size => "310x483", :id => "bgimg"  %>
-    <%= image_tag "regular/#{@style3.name}.jpg", :size => "310x483", :id => "nextimg"  %>
-	-->
+    <%= image_tag @previmg, :size => "310x483", :id => "previmg"  %>
+    <%= image_tag @bgimg, :size => "310x483", :id => "bgimg"  %>
+    <%= image_tag @nextimg, :size => "310x483", :id => "nextimg"  %>
 	
 </div>
 <div id="thumbnails_wrapper">
@@ -20,30 +13,9 @@
             <div class="container">
 				 <% @styles.each do |style| %>	
 					<div class="content">
-						<!---  get the product image thumbnail file -->
-						<%
-							# get thumbnail 
-							unless style.product_images.find_by_image_type(3).nil?
-								thumbnail = style.product_images.find_by_image_type(3).image_filename
-							else
-								thumbnail = "blank.png"
-							end
-							# get base for links
-							unless style.product_images.find_by_image_type(1).nil?
-								base = style.product_images.find_by_image_type(1).image_filename
-							else
-								base = "blank.png"
-							end
-								
-						%>
-						<!--- create the link manually and display the image -->				
 						<div>
-							<a href="/uploads/<%= @collection.id %>/<%= base %>" >
-								<img class="thumb" src="/uploads/<%= @collection.id %>/<%= thumbnail %>" >
-							</a>	
+							<%= link_to image_tag(style.picture.url(:thumbnail), :class => "thumb"), style.picture.url(:base) %>
 						</div>				
-						<!--- old implementation
-						<div><%= link_to image_tag("thumbnails/#{style.name}.jpg", :class => "thumb"), asset_path("regular/#{style.name}.jpg") %></div> -->
 					</div>	
 				<% end %>
             </div>

@@ -2,56 +2,30 @@
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       
 	
-	<%
-		#grab the styles product image and collection information
-		collection = style.collection.collection
-		thumb_product_image = style.product_images.find_by_image_type(2)
-		# OPTIMIZE 
-		# code for the small product image
-		unless thumb_product_image.nil?
-			small_image = thumb_product_image.image_filename
-		else
-			small_image = "blank.png"	
-		end	
-		
-		base_product_image = style.product_images.find_by_image_type(1)
-		
-		unless base_product_image.nil?
-			base_image = base_product_image.image_filename
-		else
-			base_image = "blank.png"	
-		end
-		
-	%>	
-
      <% if  trueIndex == 1 %>
         <ul>
         <li>
-			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
-			</a>					
+			<%= link_to image_tag(style.picture.url(:small)), style.picture.url(:base),
+			 :class => "MagicZoomPlus", :title => style.name, :rel => "zoom-position:inner"  %>
         </li>
     <% elsif trueIndex == @styles.size %>
         <li>
-			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
-			</a>					
+			<%= link_to image_tag(style.picture.url(:small)), style.picture.url(:base),
+			 :class => "MagicZoomPlus", :title => style.name, :rel => "zoom-position:inner"  %>
 	        </li>
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li>
-			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
-			</a>	
+			<%= link_to image_tag(style.picture.url(:small)), style.picture.url(:base),
+			 :class => "MagicZoomPlus", :title => style.name, :rel => "zoom-position:inner"  %>
         </li>
         </ul>
         <ul>
      <% else %>
         <li>
-			<a href="/uploads/<%= @collection.id %>/<%=  base_image %>" title="<%= style.name %>" rel="zoom-position:inner;" class="MagicZoomPlus">
-				<img src="/uploads/<%= @collection.id %>/<%=  small_image %>">
-			</a>	
+			<%= link_to image_tag(style.picture.url(:small)), style.picture.url(:base),
+			 :class => "MagicZoomPlus", :title => style.name, :rel => "zoom-position:inner"  %>
         </li>
      <% end %>
   <% end %>

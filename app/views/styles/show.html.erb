@@ -1,5 +1,8 @@
 <table>
 	<tr>
+		<th>Base</th>
+		<th>Small</th>
+		<th>Thumbmail</th>
 		<th>Style</th>
 		<th>Collection</th>
 		<th>Description</th>
@@ -8,17 +11,21 @@
 		<th>Position</th>
 	</tr>	
 	<tr>
+		<td><%= image_tag @style.picture.url(:base), :size => "120x180" %></td>
+		<td><%= image_tag @style.picture.url(:small), :size => "120x180" %></td>
+		<td><%= image_tag @style.picture.url(:thumbnail), :size => "120x180" %></td>
 		<td><%= @style.name %></td>
 		<td><%= Collection.exists?(@style.collection_id) ? Collection.find(@style.collection_id).collection : ""  %></td>
 		<td><%= @style.description %></td>
 		<td><%= Color.exists?(@style.color_id)  ? Color.find(@style.color_id).color_code : "" %></td>
 		<td><%= Size.exists?(@style.size_id) ? Size.find(@style.size_id).size_code : ""  %></td>
 		<td><%= @style.position %></td>
-	    <td><%=  link_to 'Images', collection_style_product_images_path(@style.collection_id, @style.id) %></td>		
 	</tr>	
 </table>
 
 	<!--- display product images here or the link to create product images -->
-
+  				
+  				
+  	
 	
-<%= link_to  'back', collection_styles_path %> 
+<%= link_to  'back', collection_path %> 
