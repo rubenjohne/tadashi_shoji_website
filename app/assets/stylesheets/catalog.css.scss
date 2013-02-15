@@ -45,11 +45,21 @@ ul.styles {
 	li {
 	    float: left;
 	    width: 190px;
-	
+		position: relative;
+		
 		img {
 			width: 190px;
 			height: 296px;
 		}
+		
+		span.style-name {
+			position:absolute;
+			right:20px;
+			bottom:10px;
+			z-index:99;
+			visibility: hidden;
+		}
+		
 	}
 }
 
@@ -61,4 +71,9 @@ ul.styles {
 #footer {
 	margin-top: 0px;
 }
+
+
+// grid styles
+
+
 
