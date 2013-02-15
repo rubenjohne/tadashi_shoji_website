@@ -1,3 +1,24 @@
+<!--- jQuery for the dialog box -->
+<script type="text/javascript">
+	$(document).ready(function(e) {
+		$("#customdialog").dialog({
+			resizable: false,
+			modal: true,
+			autoOpen: false,
+			width:400
+		});
+	});
+	
+</script>
+
+
+<!--- dialog div -->
+<div id="customdialog">
+	<img id="dialog-img" height="600px" width="400px"/>
+	<span id="dialog-style"></span>	
+	<span id="dialog-description"></span>	
+</div>	
+
 <ul class="styles">
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       
@@ -5,7 +26,8 @@
      <% if  trueIndex == 1 %>
         <ul>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image" %>
+			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image",
+			 	:onClick => "showDialog('#{style.name}','#{style.description}','#{style.picture.url(:base)}')" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
     <% elsif trueIndex == @styles.size %>
@@ -41,5 +63,18 @@
 		$(this).children(".style-name").css("visibility", "hidden");
 	})
 	
+	// test add event listener
+	function testDialog()
+	{
+		$("#customdialog").dialog("open");
+	}
+	
+	// OPTIMIZE function to show the dialog
+	function showDialog(name, desc, picture) {
+		$("#dialog-img").attr("src", picture);
+		$("#dialog-style").text(name);
+		$("#dialog-description").text(desc);
+		$("#customdialog").dialog("open");
+	}
 	
 </script>

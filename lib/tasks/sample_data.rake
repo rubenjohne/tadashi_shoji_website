@@ -27,7 +27,7 @@ namespace :db do
     #create 100 styles
     100.times do |n|
       name = "#{n+1}"
-      description = Faker::Lorem.words
+      description = Faker::Company.bs
       price = 99.99
       position = n + 1
       Style.create!(:name => name,

@@ -37,7 +37,17 @@
 		
 		
 // grid		
+	
+#customdialog {
+	overflow:hidden;
+}
 
+#dialog-style, #dialog-description {
+	display:block;
+	font-size:14px;
+	margin-top:3px;
+}
+	
 ul.styles {
     width: 950px;
     margin: 5px 0;
