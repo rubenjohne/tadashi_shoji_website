@@ -32,20 +32,23 @@
         </li>
     <% elsif trueIndex == @styles.size %>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image" %>
+			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image",
+			 	:onClick => "showDialog('#{style.name}','#{style.description}','#{style.picture.url(:base)}')" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image" %>
+			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image",
+			 	:onClick => "showDialog('#{style.name}','#{style.description}','#{style.picture.url(:base)}')" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
         </ul>
         <ul>
      <% else %>
 		<li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image" %>
+			<%= link_to image_tag(style.picture.url(:small)), '#',  :title => style.name, :class => "grid-image",
+			 	:onClick => "showDialog('#{style.name}','#{style.description}','#{style.picture.url(:base)}')" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
      <% end %>
@@ -62,12 +65,6 @@
 	$(".grid-style").mouseleave(function(e) {
 		$(this).children(".style-name").css("visibility", "hidden");
 	})
-	
-	// test add event listener
-	function testDialog()
-	{
-		$("#customdialog").dialog("open");
-	}
 	
 	// OPTIMIZE function to show the dialog
 	function showDialog(name, desc, picture) {
