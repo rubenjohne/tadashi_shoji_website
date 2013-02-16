@@ -68,6 +68,7 @@
 	
 	// OPTIMIZE function to show the dialog
 	function showDialog(name, desc, picture) {
+		e.preventDefault();
 		$("#dialog-img").attr("src", picture);
 		$("#dialog-style").text(name);
 		$("#dialog-description").text(desc);
