@@ -4,9 +4,34 @@
 
 // slide
 
-#bg {position:relative;z-index:1;overflow:hidden;width:100%;height:100%;}
+#bg { 
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+	width:100%;
+	height:100%;
 
-#bg img { float:left; display:block; }
+	div {
+		float:left;
+		width:310px;
+		height:483px;
+		background: url("/assets/loader.gif") no-repeat center center transparent;
+	
+		img { 
+			float:left; 
+			display:block; 
+			width:310px;
+			height:483px;
+		}
+	
+	}
+	
+	
+	
+	
+}
+
+ 
 
 #bg #previmg { margin-right:10px;}
 
