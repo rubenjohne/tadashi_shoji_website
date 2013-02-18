@@ -25,6 +25,8 @@ $img_title=$("#img_title");
 $nextImageBtn=$(".nextImageBtn");
 $prevImageBtn=$(".prevImageBtn");
 
+// main images 
+$mainImages = $("#bg img");
 
 $(window).load(function() {
 	ShowHideNextPrev($nextPrevBtnsInitState);
@@ -70,6 +72,8 @@ $(window).load(function() {
 $("#previmg").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
+	// hide images to show loading gif
+	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -81,6 +85,8 @@ $("#previmg").click(function(event){
 $("#nextimg").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
+	// hide images to show loading gif
+	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -92,6 +98,8 @@ $("#nextimg").click(function(event){
 $("#outer_container a").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
+	// hide images to show loading gif
+	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -158,6 +166,10 @@ function ShowHideNextPrev(state){
 		$nextImageBtn.fadeIn();
 		$prevImageBtn.fadeIn();
 	}
+}
+
+function HideMainImages() {
+	$mainImages.css("visibilty", "hidden");
 }
 
 //next/prev images buttons
