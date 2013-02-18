@@ -1,4 +1,17 @@
 <!--- javascript specific files for the slide view -->
+<script type="text/javascript">
+
+	$(document).ready(function(e){
+
+		$("img").bind('load', function(){
+			image = $(this);
+			image.css("visibility","visible");
+		});
+	});
+
+</script>
+
+
 
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
