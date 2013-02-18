@@ -23,26 +23,34 @@
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       
 	
+	<!--- create variable declaration to be used in loop -->
+	<%
+		name = style.name
+		description = escape_javascript style.description
+		picture_base = style.picture.url(:base)
+		picture_small = style.picture.url(:small)
+	%>
+	
      <% if  trueIndex == 1 %>
         <ul>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small), 
-			:onClick => "showDialog('#{style.name}','#{h style.description}','#{style.picture.url(:base)}')"), 
+			<%= link_to image_tag(picture_small, 
+			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
 			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
     <% elsif trueIndex == @styles.size %>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small), 
-			:onClick => "showDialog('#{style.name}','#{h style.description}','#{style.picture.url(:base)}')"), 
+			<%= link_to image_tag(picture_small, 
+			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
 			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small), 
-			:onClick => "showDialog('#{style.name}','#{h style.description}','#{style.picture.url(:base)}')"), 
+			<%= link_to image_tag(picture_small, 
+			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
 			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
@@ -50,8 +58,8 @@
         <ul>
      <% else %>
 		<li class="grid-style">
-			<%= link_to image_tag(style.picture.url(:small), 
-			:onClick => "showDialog('#{style.name}','#{h style.description}','#{style.picture.url(:base)}')"), 
+			<%= link_to image_tag(picture_small, 
+			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
 			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
 			<span class="style-name"><%= style.name %></span>
         </li>
@@ -76,7 +84,6 @@
 		$("#dialog-style").text(name);
 		$("#dialog-description").text(desc);
 		$("#customdialog").dialog("open");
-		e.preventDefault();
 	}
 	
 </script>
