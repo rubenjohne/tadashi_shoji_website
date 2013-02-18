@@ -151,6 +151,7 @@ function theNewImg_onload(){
 
 // this what loads the image
 function BackgroundLoad($this, imgSrc){
+	HideMainImages();
 	$this.attr("src", "").attr("src", imgSrc); //change image source
 	$previmg.attr("src","").attr("src", $outer_container.data("prevImage"));
 	$nextimg.attr("src","").attr("src", $outer_container.data("nextImage"));
@@ -170,6 +171,7 @@ function ShowHideNextPrev(state){
 
 function HideMainImages() {
 	$mainImages.css("visibilty", "hidden");
+
 }
 
 //next/prev images buttons
