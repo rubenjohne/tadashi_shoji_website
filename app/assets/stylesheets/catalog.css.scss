@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// navigation
+
+#catalog-nav {
+	background: url("/assets/viewOptions-bar.gif") no-repeat transparent;
+	opacity: .5;
+	width:960px;
+	height:43px;
+	margin-bottom:10px;
+	
+	.collection-name {
+		float:left;
+		margin-top: 10px;
+		span {
+			opacity: 1;
+			font-style:italic;
+			font-size: 30px;
+		}
+	}
+	
+	#catalog-controls {
+		float:right;
+		margin-top: 20px;
+		a {
+			text-indent: -9999px;
+			display:inline-block;
+			width:23px;
+			height:15px;
+			margin:0 5px;
+		}
+		.slide-active {
+			background-image: url("/assets/slideShow-active.gif");
+		}
+		.slide-inactive {
+			background-image: url("/assets/slideShow-inactive.gif");
+		}
+		.grid-active {
+			background-image: url("/assets/grid-active.gif");
+		}
+		.grid-inactive {
+			background-image: url("/assets/grid-inactive.gif");
+		}
+	}
+	
+}
+	
+	
+	
 // slide
 
 #bg { 

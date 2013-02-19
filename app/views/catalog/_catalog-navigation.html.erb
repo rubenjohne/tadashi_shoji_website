@@ -1,0 +1,9 @@
+<div id="catalog-nav">
+	<div class="collection-name">
+		<span><%= @collection.collection %></span>
+	</div>	
+	<div id="catalog-controls">
+		<%= link_to "Slide", { :controller => "catalog", :action => "slide", :id => @collection }, :class =>  "#{@slideClass}" %>
+		<%= link_to "Grid", { :controller => "catalog", :action => "grid", :id => @collection }, :class =>  "#{@gridClass}" %>
+	</div>		
+</div>	

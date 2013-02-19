@@ -4,6 +4,8 @@ class CatalogController < ApplicationController
     if Collection.exists?(params[:id])
       @collection = Collection.find(params[:id])
       @styles = @collection.styles
+      @gridClass = "grid-active"
+      @slideClass = "slide-inactive"
     end  
   end
   
@@ -13,6 +15,8 @@ class CatalogController < ApplicationController
     if Collection.exists?(params[:id])
       @collection = Collection.find(params[:id])
       @styles = @collection.styles
+      @gridClass = "grid-inactive"
+      @slideClass = "slide-active"      
       # get the first 3 styles 
       if @styles.length >= 3
         @previmg = @styles[0].picture.url(:base)
