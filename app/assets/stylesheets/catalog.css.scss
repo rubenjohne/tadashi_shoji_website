@@ -58,6 +58,10 @@
 	overflow:hidden;
 	width:100%;
 	height:100%;
+	
+	#div-center {
+		margin: 0 15px;
+	}
 
 	div {
 		float:left;
@@ -72,7 +76,10 @@
 			width:310px;
 			height:483px;
 		}
-	
+		
+		#previmg { }
+		#nextimg {}
+		#bgimg { }
 	}
 	
 	
@@ -81,14 +88,6 @@
 }
 
  
-
-#bg #previmg { margin-right:10px;}
-
-#bg #nextimg { margin-left:10px;}
-
-
-#bgimg{/*display:none;*/ -ms-interpolation-mode: bicubic;}
-
 #preloader {position:relative; z-index:3; width:32px; padding:20px; top:80px; margin:auto; background:#000;}
 
 
