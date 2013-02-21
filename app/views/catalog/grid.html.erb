@@ -1,6 +1,7 @@
 <!--- jQuery for the dialog box -->
 <script type="text/javascript">
 	$(document).ready(function(e) {
+		
 		$("#customdialog").dialog({
 			resizable: false,
 			modal: true,
@@ -84,6 +85,7 @@
 	
 	// OPTIMIZE function to show the dialog
 	function showDialog(name, desc, picture) {
+		$("#dialog-img").attr("src", '');	
 		$("#dialog-img").attr("src", picture);
 		$("#dialog-style").text(name);
 		$("#dialog-description").text(desc);
