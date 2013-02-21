@@ -29,8 +29,10 @@ TadashiShojiWebsite::Application.routes.draw do
   match 'catalog/grid/:id' => "catalog#grid"
   match 'catalog/slide/:id' => "catalog#slide"
 
-  
   match '/', :to => 'pages#home'
+  
+  #collections url 
+  match '/ss2013runway', :to => 'catalog#grid#3'
   
   root :to => 'pages#home'
   
