@@ -81,7 +81,15 @@ footer
 			}
 		}
 	}
-	
+	ul#social-links
+	{
+		list-style-type: none;
+		float: right;
+		 li
+		{
+			float:left;
+		}
+	}	
 }
 
 
