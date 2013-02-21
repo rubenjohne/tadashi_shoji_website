@@ -10,7 +10,6 @@
 	opacity: .5;
 	width:960px;
 	height:43px;
-	margin-bottom:10px;
 	margin-top: 40px;
 	
 	.collection-name {
@@ -128,25 +127,28 @@
 	
 ul.styles {
     width: 960px;
-    margin: 5px 0;
 
-	li {
-	    float: left;
-	    width: 192px;
-		position: relative;
+	ul {
+		margin: 6px 0;
+		li {
+		    float: left;
+		    width: 192px;
+			position: relative;
 		
-		img {
-			width: 192px;
-		}
+			img {
+				width: 192px;
+			}
 		
-		span.style-name {
-			position:absolute;
-			right:20px;
-			bottom:10px;
-			z-index:99;
-			visibility: hidden;
-		}
+			span.style-name {
+				position:absolute;
+				right:20px;
+				bottom:10px;
+				z-index:99;
+				visibility: hidden;
+				color: #555555;
+			}
 		
+		}	
 	}
 }
 
