@@ -87,7 +87,7 @@
 	</div>
     <div class="slide-base-image">
 		<%= link_to image_tag(@style3.picture.url(:base),  :id => "nextimg", 
-		 	:onClick => "showDialog($('.next-style').text(), $('.next-description').text(), $('#neximg').attr('src'))"),
+		 	:onClick => "showDialog($('.next-style').text(), $('.next-description').text(), $('#nextimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
 			<p class="slide-style-name next-style"><%= @style3.name %></p>
