@@ -48,42 +48,51 @@
 	.slide-color {
 		margin:10px 0;
 	}
+	
+	#slidedialog {
+		overflow:hidden;
+	}
 </style>
 
 <!--- catalog navigation -->
 <%= render :partial => 'catalog-navigation' %>
 
 <div id="slidedialog">
-	<p>This is working</p>
+	<img id="slide-dialog-img" height="600px" width="400px"/>
+	<span id="slide-dialog-style"></span>	
+	<span id="slide-dialog-description"></span>	
 </div>	
 
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style1.picture.url(:base),  :id => "previmg",  :onClick => "showDialog()"),
+		<%= link_to image_tag(@style1.picture.url(:base),  :id => "previmg", 
+		 	:onClick => "showDialog($('.prev-style').text(), $('.prev-description').text(), $('#previmg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
-			<p class="slide-style-name"><%= @style1.name %></p>
-			<p class="slide-description"><%= @style1.description %></p>
-			<p class="slide-color"><%= Color.find(@style1.color_id).color_name %></p>
+			<p class="slide-style-name prev-style"><%= @style1.name %></p>
+			<p class="slide-description prev-description"><%= @style1.description %></p>
+			<p class="slide-color prev-color"><%= Color.find(@style1.color_id).color_name %></p>
 		</div>	
 	</div>
     <div id="div-center"  class="slide-base-image">
-		<%= link_to image_tag(@style2.picture.url(:base), :id => "bgimg",  :onClick => "showDialog()"),
+		<%= link_to image_tag(@style2.picture.url(:base),  :id => "bgimg", 
+		 	:onClick => "showDialog($('.bg-style').text(), $('.bg-description').text(), $('#bgimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
-			<p class="slide-style-name"><%= @style2.name %></p>
-			<p class="slide-description"><%= @style2.description %></p>
-			<p class="slide-color"><%= Color.find(@style2.color_id).color_name %></p>
+			<p class="slide-style-name bg-style"><%= @style2.name %></p>
+			<p class="slide-description bg-description"><%= @style2.description %></p>
+			<p class="slide-color bg-color"><%= Color.find(@style2.color_id).color_name %></p>
 		</div>	
 	</div>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style3.picture.url(:base), :id => "nextimg",  :onClick => "showDialog()"),
+		<%= link_to image_tag(@style3.picture.url(:base),  :id => "nextimg", 
+		 	:onClick => "showDialog($('.next-style').text(), $('.next-description').text(), $('#neximg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
-			<p class="slide-style-name"><%= @style3.name %></p>
-			<p class="slide-description"><%= @style3.description %></p>
-			<p class="slide-color"><%= Color.find(@style3.color_id).color_name %></p>
+			<p class="slide-style-name next-style"><%= @style3.name %></p>
+			<p class="slide-description next-description"><%= @style3.description %></p>
+			<p class="slide-color next-color"><%= Color.find(@style3.color_id).color_name %></p>
 		</div>	
 	</div>
 	
@@ -120,7 +129,10 @@
 	);
 	
 	// OPTIMIZE function to show the dialog
-	function showDialog() {
+	function showDialog(name, desc, picture) {
+		$("#slide-dialog-img").attr("src", picture);
+		$("#slide-dialog-style").text(name);
+		$("#slide-dialog-description").text(desc);		
 		$("#slidedialog").dialog("open");
 	}
 	
