@@ -18,7 +18,10 @@ class Style < ActiveRecord::Base
   has_attached_file :picture, styles: {
     base: '1200x1800>',
     small: '220x330>',
-    thumbnail: '120x180>'
+    thumbnail: '120x180>',
+    grid: '192x288>',
+    popup: '400x600>',
+    mini: '25x39>'
   }
   
 end

@@ -113,7 +113,7 @@
 				 <% @styles.each do |style| %>	
 					<div class="content">
 						<div>
-							<%= link_to image_tag(style.picture.url(:thumbnail), :class => "thumb"), style.picture.url(:base) %>
+							<%= link_to image_tag(style.picture.url(:mini), :class => "thumb"), style.picture.url(:base) %>
 						</div>				
 					</div>	
 				<% end %>
