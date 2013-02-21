@@ -63,11 +63,11 @@
 		margin: 0 15px;
 	}
 
-	div {
+	.slide-base-image {
 		float:left;
 		width:310px;
 		height:483px;
-		background: url("/assets/loader.gif") no-repeat center center transparent;
+		//background: url("/assets/loader.gif") no-repeat center center transparent;
 	
 		img { 
 			visibility:hidden;

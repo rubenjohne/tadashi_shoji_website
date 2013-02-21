@@ -7,22 +7,85 @@
 			image = $(this);
 			image.css("visibility","visible");
 		});
+		
+		$("#slidedialog").dialog({
+			resizable: false,
+			modal: true,
+			autoOpen: false,
+			width:400
+		});
+		
+		
 	});
+	
+		
 
 </script>
 
 
+<style type="text/css">
+	
+	.slide-base-image {
+		position:relative;
+	}
+
+	.slide-content {
+		position:absolute;
+		bottom: 50px;
+		right: 10px;
+		text-align:right;
+		visibility:hidden;
+	}
+	
+	.slide-style-name {
+
+	}
+	
+	.slide-description {
+		margin:20px 0;
+	}
+	
+	.slide-color {
+		margin:10px 0;
+	}
+</style>
 
 <!--- catalog navigation -->
 <%= render :partial => 'catalog-navigation' %>
 
-
+<div id="slidedialog">
+	<p>This is working</p>
+</div>	
 
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
-    <div><%= image_tag @previmg,  :id => "previmg"  %></div>
-    <div id="div-center"><%= image_tag @bgimg, :id => "bgimg"  %></div>
-    <div><%= image_tag @nextimg, :id => "nextimg"  %></div>
+    <div class="slide-base-image">
+		<%= link_to image_tag(@style1.picture.url(:base),  :id => "previmg",  :onClick => "showDialog()"),
+			'#',    :onClick => "return false;" %>
+		<div class="slide-content">
+			<p class="slide-style-name"><%= @style1.name %></p>
+			<p class="slide-description"><%= @style1.description %></p>
+			<p class="slide-color"><%= Color.find(@style1.color_id).color_name %></p>
+		</div>	
+	</div>
+    <div id="div-center"  class="slide-base-image">
+		<%= link_to image_tag(@style2.picture.url(:base), :id => "bgimg",  :onClick => "showDialog()"),
+			'#',    :onClick => "return false;" %>
+		<div class="slide-content">
+			<p class="slide-style-name"><%= @style2.name %></p>
+			<p class="slide-description"><%= @style2.description %></p>
+			<p class="slide-color"><%= Color.find(@style2.color_id).color_name %></p>
+		</div>	
+	</div>
+    <div class="slide-base-image">
+		<%= link_to image_tag(@style3.picture.url(:base), :id => "nextimg",  :onClick => "showDialog()"),
+			'#',    :onClick => "return false;" %>
+		<div class="slide-content">
+			<p class="slide-style-name"><%= @style3.name %></p>
+			<p class="slide-description"><%= @style3.description %></p>
+			<p class="slide-color"><%= Color.find(@style3.color_id).color_name %></p>
+		</div>	
+	</div>
 	
 </div>
 <div id="thumbnails_wrapper">
@@ -42,3 +105,23 @@
 </div>
 
 <%= javascript_include_tag 'slide' %>
+
+
+<!--- remove this jQuery code later -->
+<script type="text/javascript">
+	
+	$(".slide-base-image").hover(
+		function() {
+			$(this).children(".slide-content").css("visibility", "visible");
+		},
+		function() {
+			$(this).children(".slide-content").css("visibility", "hidden");			
+		}
+	);
+	
+	// OPTIMIZE function to show the dialog
+	function showDialog() {
+		$("#slidedialog").dialog("open");
+	}
+	
+</script>

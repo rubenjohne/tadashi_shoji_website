@@ -19,9 +19,9 @@ class CatalogController < ApplicationController
       @slideClass = "slide-active"      
       # get the first 3 styles 
       if @styles.length >= 3
-        @previmg = @styles[0].picture.url(:base)
-        @bgimg = @styles[1].picture.url(:base)
-        @nextimg = @styles[2].picture.url(:base)
+        @style1 = @styles[0]
+        @style2 = @styles[1]
+        @style3 = @styles[2]
       else
         render  :action => :grid 
       end  
