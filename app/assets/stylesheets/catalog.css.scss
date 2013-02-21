@@ -25,6 +25,22 @@
 		}
 	}
 	
+	#video-image {
+		float: right;
+		margin-top: 20px;
+		margin-right: 10px;
+		a {
+			margin: 0 10px;
+			color: #777777;
+		}
+		a:hover {
+			color: #000000;
+		}
+		.vbar {
+			border-right: 1px solid #777777;
+		}
+	}
+	
 	#catalog-controls {
 		float:right;
 		margin-top: 20px;
@@ -36,16 +52,22 @@
 			margin:0 5px;
 		}
 		.slide-active {
-			background-image: url("/assets/slideShow-active.gif");
+			background: url("/assets/slideShow-active.gif") no-repeat transparent;
 		}
 		.slide-inactive {
-			background-image: url("/assets/slideShow-inactive.gif");
+			background: url("/assets/slideShow-inactive.gif") no-repeat transparent;
+		}
+		.slide-inactive:hover {
+			background: url("/assets/slideShow-active.gif") no-repeat transparent;	
 		}
 		.grid-active {
-			background-image: url("/assets/grid-active.gif");
+			background: url("/assets/grid-active.gif") no-repeat transparent;
 		}
 		.grid-inactive {
-			background-image: url("/assets/grid-inactive.gif");
+			background: url("/assets/grid-inactive.gif") no-repeat transparent;
+		}
+		.grid-inactive:hover {
+			background: url("/assets/grid-active.gif") no-repeat transparent;		
 		}
 	}
 	

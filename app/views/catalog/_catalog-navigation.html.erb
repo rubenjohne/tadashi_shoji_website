@@ -5,5 +5,10 @@
 	<div id="catalog-controls">
 		<%= link_to "Slide", { :controller => "catalog", :action => "slide", :id => @collection }, :class =>  "#{@slideClass}" %>
 		<%= link_to "Grid", { :controller => "catalog", :action => "grid", :id => @collection }, :class =>  "#{@gridClass}" %>
-	</div>		
+	</div>
+	<div id="video-image">
+		<%= link_to "VIDEO", "#" %>
+		<span class="vbar"></span>
+		<%= link_to "IMAGES", "#" %>		
+	</div>				
 </div>	
