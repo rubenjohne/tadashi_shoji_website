@@ -12,7 +12,7 @@
         <td><%=  link_to 'Show', collection_path(collection) %></td>
         <td><%=  link_to 'Edit', edit_collection_path(collection) %></td>
         <td><%=  link_to 'Styles', collection_styles_path(collection) %></td>
-        <td><%=  button_to 'Destroy', collection_path(collection), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
+        <td><%= #disabled to prevent accidental deletes button_to 'Destroy', collection_path(collection), :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
     </tr>
 <% end  %>
 

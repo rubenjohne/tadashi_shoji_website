@@ -112,6 +112,8 @@ describe CollectionsController do
         end.should change(Collection, :count).by(-1)  
       end
       
+      it "should not delete if there are styles within the collection" 
+      
     end
     
     describe "PUT 'update'" do
