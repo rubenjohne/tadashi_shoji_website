@@ -77,8 +77,12 @@ footer
 			padding: 10px 10px 10px 0;
 			a
 			{
-				color: #ffffff;
+				color: #777777;
 				font-size: 12px;
+			}
+			a:hover 
+			{
+				color:#ffffff;
 			}
 		}
 	}
