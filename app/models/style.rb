@@ -21,7 +21,7 @@ class Style < ActiveRecord::Base
     thumbnail: '120x180>',
     grid: '192x288>',
     popup: '400x600>',
-    mini: '25x39>'
+    mini: '42x55>'
   }
   
 end
