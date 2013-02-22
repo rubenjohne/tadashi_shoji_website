@@ -29,4 +29,8 @@ class CatalogController < ApplicationController
         
   end
   
+  def video
+    
+  end
+  
 end

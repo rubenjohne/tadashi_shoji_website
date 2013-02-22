@@ -20,4 +20,7 @@ describe CatalogController do
     
   end  
 
+  describe "GET 'video'" do 
+    
+    it "should be successful"
 end
