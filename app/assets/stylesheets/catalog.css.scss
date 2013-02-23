@@ -116,7 +116,7 @@
 #preloader {position:relative; z-index:3; width:32px; padding:20px; top:80px; margin:auto; background:#000;}
 
 
-#thumbnails_wrapper{z-index:2; position:relative; bottom:0; width:100%; background:url(empty.gif); /* stupid ie needs a background value to understand hover area */	}
+#thumbnails_wrapper{z-index:2; position:relative; bottom:0; width:100%; background:url(empty.gif); /* stupid ie needs a background value to understand hover area */ height:63px;	}
 	#outer_container{position:relative; padding:0; width:100%; margin:10px auto;}
 		#outer_container .thumbScroller{position:relative; overflow:hidden; background:url(fs_img_g_bg.png);}
 		#outer_container .thumbScroller, #outer_container .thumbScroller .container, #outer_container .thumbScroller .content{ }
@@ -124,7 +124,7 @@
 		#outer_container .thumbScroller .content{float:left;}
 		#outer_container .thumbScroller .content div{height:100%;}
 		#outer_container .thumbScroller img{ padding:2px;}
-		#outer_container .thumbScroller .thumb { width: 42px; height:55px;}
+		#outer_container .thumbScroller .thumb { width: 42px; height:63px;}
 		#outer_container .thumbScroller .content div a{display:block;}
 		
 		.nextImageBtn, .prevImageBtn{display:block; position:absolute; width:50px; height:50px; top:170px; margin:-25px 10px 0 10px; z-index:3; filter:alpha(opacity=40); -moz-opacity:0.4; -khtml-opacity:0.4; opacity:0.4;}
