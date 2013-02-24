@@ -124,7 +124,7 @@
 		#outer_container .thumbScroller .content{float:left;}
 		#outer_container .thumbScroller .content div{height:100%;}
 		#outer_container .thumbScroller img{ padding:2px;}
-		#outer_container .thumbScroller .thumb { width: 42px; height:63px;}
+		#outer_container .thumbScroller .thumb { width: 42px; height:63px; opacity:0;}
 		#outer_container .thumbScroller .content div a{display:block;}
 		
 		.nextImageBtn, .prevImageBtn{display:block; position:absolute; width:50px; height:50px; top:170px; margin:-25px 10px 0 10px; z-index:3; filter:alpha(opacity=40); -moz-opacity:0.4; -khtml-opacity:0.4; opacity:0.4;}

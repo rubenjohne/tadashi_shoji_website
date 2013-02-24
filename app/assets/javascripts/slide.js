@@ -36,7 +36,7 @@ $(window).load(function() {
 	sliderWidth=$outer_container.width();
 	$thumbScroller.css("width",sliderWidth);
 	var totalContent=0;
-	fadeSpeed=200;
+	fadeSpeed=300;
 	
 	var $the_outer_container=document.getElementById("outer_container");
 	var $placement=findPos($the_outer_container);		
