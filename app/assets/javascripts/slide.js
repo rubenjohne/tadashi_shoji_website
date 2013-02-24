@@ -1,7 +1,7 @@
 // config
 $tsMargin=30; //first and last thumbnail margin (for better cursor interaction)
 $scrollEasing=10; //scroll easing amount (0 for no easing)
-$scrollEasingType="easeOutCirc"; //scroll easing type
+$scrollEasingType="linear"; //scroll easing type
 $thumbnailsContainerOpacity=0.8; //thumbnails area default opacity
 $thumbnailsContainerMouseOutOpacity=0; //thumbnails area opacity on mouse out
 $thumbnailsOpacity=1; //thumbnails default opacity
@@ -24,9 +24,6 @@ $nextimg=$("#nextimg");
 $img_title=$("#img_title");
 $nextImageBtn=$(".nextImageBtn");
 $prevImageBtn=$(".prevImageBtn");
-
-// main images 
-$mainImages = $("#bg img");
 
 $(window).load(function() {
 	ShowHideNextPrev($nextPrevBtnsInitState);
@@ -72,8 +69,6 @@ $(window).load(function() {
 $("#previmg").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
-	// hide images to show loading gif
-	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -85,8 +80,6 @@ $("#previmg").click(function(event){
 $("#nextimg").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
-	// hide images to show loading gif
-	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -98,8 +91,6 @@ $("#nextimg").click(function(event){
 $("#outer_container a").click(function(event){
 	event.preventDefault();
 	var $this=$(this);
-	// hide images to show loading gif
-	HideMainImages();
 	// this sets the next and previous images
 	GetNextPrevImages($this);
 	GetImageTitle($this);
@@ -107,17 +98,20 @@ $("#outer_container a").click(function(event){
 	ShowHideNextPrev("show");
 });
 
-//get next/prev images
+//get next/prev images 
+// by passing the current image in the event find the next and previous right next to it
 function GetNextPrevImages(curr){
 	var nextImage=curr.parents(".content").next().find("a").attr("href");
 	if(nextImage==null){ //if last image, next is first
 		var nextImage=$(".content").first().find("a").attr("href");
 	}
+	// set the nextImage variable to be used 
 	$outer_container.data("nextImage",nextImage);
 	var prevImage=curr.parents(".content").prev().find("a").attr("href");
 	if(prevImage==null){ //if first image, previous is last
 		var prevImage=$(".content").last().find("a").attr("href");
 	}
+	// set the prevImage variable to be used 
 	$outer_container.data("prevImage",prevImage);
 }
 
@@ -151,7 +145,10 @@ function theNewImg_onload(){
 
 // this what loads the image
 function BackgroundLoad($this, imgSrc){
-	HideMainImages();
+	// check fade in fade out technique to switch image
+	$this.fadeOut();
+	$previmg.fadeOut();
+	$nextimg.fadeOut();
 	$this.attr("src", "").attr("src", imgSrc); //change image source
 	$previmg.attr("src","").attr("src", $outer_container.data("prevImage"));
 	$nextimg.attr("src","").attr("src", $outer_container.data("nextImage"));
@@ -169,10 +166,6 @@ function ShowHideNextPrev(state){
 	}
 }
 
-function HideMainImages() {
-	$mainImages.css("visibilty", "hidden");
-
-}
 
 //next/prev images buttons
 $nextImageBtn.click(function(event){
