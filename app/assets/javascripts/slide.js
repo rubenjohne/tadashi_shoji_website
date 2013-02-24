@@ -25,6 +25,9 @@ $img_title=$("#img_title");
 $nextImageBtn=$(".nextImageBtn");
 $prevImageBtn=$(".prevImageBtn");
 
+// slide config
+$fadeSlideSpeed = 'slow'
+
 $(window).load(function() {
 	ShowHideNextPrev($nextPrevBtnsInitState);
 
@@ -146,12 +149,21 @@ function theNewImg_onload(){
 // this what loads the image
 function BackgroundLoad($this, imgSrc){
 	// check fade in fade out technique to switch image
-	$this.fadeOut();
-	$previmg.fadeOut();
-	$nextimg.fadeOut();
-	$this.attr("src", "").attr("src", imgSrc); //change image source
-	$previmg.attr("src","").attr("src", $outer_container.data("prevImage"));
-	$nextimg.attr("src","").attr("src", $outer_container.data("nextImage"));
+	// what i want to do is fade out the old and fade in the new once it's ready
+	$this.fadeOut($fadeSlideSpeed, function() {
+		$this.attr("src", imgSrc); //change image source		
+	}).fadeIn($fadeSlideSpeed);
+	
+	// prev image
+	$previmg.fadeOut($fadeSlideSpeed, function() {
+		$previmg.attr("src", $outer_container.data("prevImage")); //change image source		
+	}).fadeIn($fadeSlideSpeed);
+	
+	// next image
+	$nextimg.fadeOut($fadeSlideSpeed, function() {
+		$nextimg.attr("src",  $outer_container.data("nextImage")); //change image source		
+	}).fadeIn($fadeSlideSpeed);
+
 }
 
 
