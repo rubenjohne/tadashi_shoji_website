@@ -71,7 +71,7 @@
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style1.picture.url(:base),  :id => "previmg", 
+		<%= link_to image_tag(@style1.picture.url(:popup),  :id => "previmg", 
 		 	:onClick => "showDialog($('.prev-style').text(), $('.prev-description').text(), $('#previmg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
@@ -81,7 +81,7 @@
 		</div>	
 	</div>
     <div id="div-center"  class="slide-base-image">
-		<%= link_to image_tag(@style2.picture.url(:base),  :id => "bgimg", 
+		<%= link_to image_tag(@style2.picture.url(:popup),  :id => "bgimg", 
 		 	:onClick => "showDialog($('.bg-style').text(), $('.bg-description').text(), $('#bgimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
@@ -91,7 +91,7 @@
 		</div>	
 	</div>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style3.picture.url(:base),  :id => "nextimg", 
+		<%= link_to image_tag(@style3.picture.url(:popup),  :id => "nextimg", 
 		 	:onClick => "showDialog($('.next-style').text(), $('.next-description').text(), $('#nextimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
@@ -109,7 +109,7 @@
 				 <% @styles.each do |style| %>		
 					<div class="content">
 						<div>
-							<%= link_to image_tag(style.picture.url(:mini), :class => "thumb"), style.picture.url(:base) %>
+							<%= link_to image_tag(style.picture.url(:mini), :class => "thumb"), style.picture.url(:popup) %>
 						</div>				
 					</div>	
 				<% end %>
