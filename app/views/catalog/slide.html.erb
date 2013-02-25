@@ -51,12 +51,7 @@
 		display:block;
 	}
 	
-	.preload {
-		visibility:hidden;
-		opacity:0;
-		display:none;
-	}
-	
+
 </style>
 
 <!--- catalog navigation -->
@@ -143,7 +138,7 @@
 	
 </script>
 
+<!--- preload images -->
 <% @styles.each do |style| %>
-	<!--- preload images -->
 	<%= image_tag style.picture.url(:popup), :class =>  "preload", :alt => nil %>
 <% end %>

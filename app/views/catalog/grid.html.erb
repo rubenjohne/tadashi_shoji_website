@@ -101,3 +101,10 @@
 	}
 	
 </script>
+
+
+
+<!--- preload images -->
+<% @styles.each do |style| %>
+	<%= image_tag style.picture.url(:popup), :class =>  "preload", :alt => nil %>
+<% end %>
