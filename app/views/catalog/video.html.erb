@@ -1,7 +1,4 @@
 <style type="text/css">
-	#video {
-		margin:20px 0;
-	}
 </style>
 
 
@@ -11,8 +8,14 @@
 </div>	
 <script type='text/javascript'>
   jwplayer('video').setup({
-    file: "<%= @collection.video_url %>",
-    width: "960",
-    height: "540",
+    'file': '<%= @collection.video_url %>',
+    'width': '960',
+    'height': '540',
+	'modes': [
+	        {type: 'html5'},
+	        {type: 'flash', src: 'player.swf'},
+	        {type: 'download'}
+	    ]
+	
   });
 </script>
