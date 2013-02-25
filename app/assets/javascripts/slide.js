@@ -136,6 +136,9 @@ function GetNextPrevImages(curr){
 function GetImageTitle(elem){
 	var title_attr=elem.children("img").attr("title"); //get image title attribute
 	$img_title.data("imageTitle", title_attr); //store image title
+	// get attributes to update image 
+	$bgStyleName = elem.children("img").attr("style_name");
+	$bgStyleDescription = elem.children("img").attr("style_description");
 }
 
 //switch image
@@ -162,15 +165,28 @@ function theNewImg_onload(){
 // this what loads the image
 function BackgroundLoad($this, imgSrc){
 	$this.attr("src", "").attr("src", imgSrc); //change image source
+	$this.attr("style_name", $bgStyleName )	
+	$this.attr("style_description", $bgStyleDescription )	
+	// slider texts 
+	$('.bg-style').text($bgStyleName) 
+	$('.bg-description').text($bgStyleDescription) 
+	
 			
 	$previmg.attr("src", "").attr("src", $outer_container.data("prevImage")); //change image source		
 	$previmg.attr("style_name", $prevStyleName )	
 	$previmg.attr("style_description", $prevStyleDescription )	
+	// slider texts 
+	$('.prev-style').text($prevStyleName) 
+	$('.prev-description').text($prevStyleDescription) 
+	
 	
 	
 	$nextimg.attr("src", "").attr("src",  $outer_container.data("nextImage")); //change image source	
 	$nextimg.attr("style_name", $nextStyleName )	
 	$nextimg.attr("style_description", $nextStyleDescription )	
+	// slider texts 
+	$('.next-style').text($nextStyleName) 
+	$('.next-description').text($nextStyleDescription) 
 }
 
 
