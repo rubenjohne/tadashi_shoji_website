@@ -60,6 +60,7 @@
 <div id="slidedialog">
 	<img id="slide-dialog-img" height="600px" width="400px"/>
 	<span id="slide-dialog-style"></span>	
+	<span id="slide-dialog-color"></span>	
 	<span id="slide-dialog-description"></span>	
 </div>	
 
@@ -67,35 +68,38 @@
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
     <div class="slide-base-image">
 		<%= link_to image_tag(@style1.picture.url(:popup),  :id => "previmg", 
-			:style_name => @style1.name, :style_description => @style1.description,
-		 	:onClick => "showDialog($('#previmg').attr('style_name'), $('#previmg').attr('style_description'), $('#previmg').attr('src'))"),
+			:style_name => @style1.name, :style_description => @style1.description, :style_color => @style1.color.color_name, 
+		 	:onClick => "showDialog($('#previmg').attr('style_name'), $('#previmg').attr('style_color'),
+			$('#previmg').attr('style_description'), $('#previmg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
 			<p class="slide-style-name prev-style"><%= @style1.name %></p>
 			<p class="slide-description prev-description"><%= @style1.description %></p>
-			<p class="slide-color prev-color"><%= Color.find(@style1.color_id).color_name %></p>
+			<p class="slide-color prev-color"><%= @style1.color.color_name %></p>
 		</div>	
 	</div>
     <div id="div-center"  class="slide-base-image">
 		<%= link_to image_tag(@style2.picture.url(:popup),  :id => "bgimg", 
-			:style_name => @style2.name, :style_description => @style2.description,
-		 	:onClick => "showDialog($('#bgimg').attr('style_name'), $('#bgimg').attr('style_description'), $('#bgimg').attr('src'))"),
+			:style_name => @style2.name, :style_description => @style2.description, :style_color => @style2.color.color_name, 
+		 	:onClick => "showDialog($('#bgimg').attr('style_name'), $('#bgimg').attr('style_color'),
+			$('#bgimg').attr('style_description'), $('#bgimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
 			<p class="slide-style-name bg-style"><%= @style2.name %></p>
 			<p class="slide-description bg-description"><%= @style2.description %></p>
-			<p class="slide-color bg-color"><%= Color.find(@style2.color_id).color_name %></p>
+			<p class="slide-color bg-color"><%= @style2.color.color_name %></p>
 		</div>	
 	</div>
     <div class="slide-base-image">
 		<%= link_to image_tag(@style3.picture.url(:popup),  :id => "nextimg", 
-			:style_name => @style3.name, :style_description => @style3.description,
-		 	:onClick => "showDialog($('#nextimg').attr('style_name'), $('#nextimg').attr('style_description'), $('#nextimg').attr('src'))"),
+			:style_name => @style3.name, :style_description => @style3.description, :style_color => @style3.color.color_name, 
+		 	:onClick => "showDialog($('#nextimg').attr('style_name'), $('#nextimg').attr('style_color'),
+			$('#nextimg').attr('style_description'), $('#nextimg').attr('src'))"),
 			'#',    :onClick => "return false;" %>
 		<div class="slide-content">
 			<p class="slide-style-name next-style"><%= @style3.name %></p>
 			<p class="slide-description next-description"><%= @style3.description %></p>
-			<p class="slide-color next-color"><%= Color.find(@style3.color_id).color_name %></p>
+			<p class="slide-color next-color"><%= @style3.color.color_name %></p>
 		</div>	
 	</div>
 	
@@ -134,9 +138,10 @@
 	);
 	
 	// OPTIMIZE function to show the dialog
-	function showDialog(name, desc, picture) {
+	function showDialog(name, color, desc, picture) {
 		$("#slide-dialog-img").attr("src", picture);
 		$("#slide-dialog-style").text(name);
+		$("#slide-dialog-color").text(color);
 		$("#slide-dialog-description").text(desc);		
 		$("#slidedialog").dialog("open");
 	}

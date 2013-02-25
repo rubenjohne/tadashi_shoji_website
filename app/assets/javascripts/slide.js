@@ -29,10 +29,13 @@ $prevImageBtn=$(".prevImageBtn");
 $fadeSlideSpeed = 'slow'
 $nextStyleName = ''
 $nextStyleDescription = ''
+$nextStyleColor = ''
 $prevStyleName = ''
 $prevStyleDescription = ''
+$prevStyleColor = ''
 $bgStyleName = ''
 $bgStyleDescription = ''
+$bgStyleColor = ''
 
 $(window).load(function() {
 	ShowHideNextPrev($nextPrevBtnsInitState);
@@ -113,19 +116,25 @@ function GetNextPrevImages(curr){
 	var nextImage = curr.parents(".content").next().find("a").attr("href");
 	$nextStyleName = curr.parents(".content").next().find("img").attr("style_name");
 	$nextStyleDescription = curr.parents(".content").next().find("img").attr("style_description");	
+	$nextStyleColor = curr.parents(".content").next().find("img").attr("style_color");	
 	if(nextImage==null){ //if last image, next is first
 		var nextImage=$(".content").first().find("a").attr("href");
-		$nextStyleName = $(".content").first().find("a").attr("style_name");
-		$nextStyleDescription = $(".content").first().find("a").attr("style_description");
+		$nextStyleName = $(".content").first().find("img").attr("style_name");
+		$nextStyleDescription = $(".content").first().find("img").attr("style_description");
+		$nextStyleColor = curr.parents(".content").next().find("img").attr("style_color");	
 	}
 	// set the nextImage variable to be used 
 	$outer_container.data("nextImage",nextImage);
 	var prevImage=curr.parents(".content").prev().find("a").attr("href");
 	$prevStyleName = curr.parents(".content").prev().find("img").attr("style_name");
 	$prevStyleDescription = curr.parents(".content").prev().find("img").attr("style_description");	
+	$prevStyleColor = curr.parents(".content").prev().find("img").attr("style_color");	
 	
 	if(prevImage==null){ //if first image, previous is last
 		var prevImage=$(".content").last().find("a").attr("href");
+		$prevStyleName = $(".content").last().find("img").attr("style_name");
+		$prevStyleDescription = $(".content").last().find("img").attr("style_description");	
+		$prevStyleColor = $(".content").last().find("img").attr("style_color");	
 	}
 	// set the prevImage variable to be used 
 	$outer_container.data("prevImage",prevImage);
@@ -139,6 +148,7 @@ function GetImageTitle(elem){
 	// get attributes to update image 
 	$bgStyleName = elem.children("img").attr("style_name");
 	$bgStyleDescription = elem.children("img").attr("style_description");
+	$bgStyleColor = elem.children("img").attr("style_color");
 }
 
 //switch image
@@ -170,6 +180,7 @@ function BackgroundLoad($this, imgSrc){
 	// slider texts 
 	$('.bg-style').text($bgStyleName) 
 	$('.bg-description').text($bgStyleDescription) 
+	$('.bg-color').text($bgStyleColor) 
 	
 			
 	$previmg.attr("src", "").attr("src", $outer_container.data("prevImage")); //change image source		
@@ -178,6 +189,7 @@ function BackgroundLoad($this, imgSrc){
 	// slider texts 
 	$('.prev-style').text($prevStyleName) 
 	$('.prev-description').text($prevStyleDescription) 
+	$('.prev-color').text($prevStyleColor) 
 	
 	
 	
@@ -187,6 +199,7 @@ function BackgroundLoad($this, imgSrc){
 	// slider texts 
 	$('.next-style').text($nextStyleName) 
 	$('.next-description').text($nextStyleDescription) 
+	$('.next-color').text($nextStyleColor) 
 }
 
 

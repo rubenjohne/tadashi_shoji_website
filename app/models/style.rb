@@ -2,8 +2,8 @@ class Style < ActiveRecord::Base
   attr_accessible :collection_id, :color_id, :description, :name, :price, :size_id, :position
   attr_accessible :picture
   belongs_to :collection
+  belongs_to :color
   has_one :size
-  has_one :color
   has_many :product_images 
   #validations
   validates :name, :presence => true
