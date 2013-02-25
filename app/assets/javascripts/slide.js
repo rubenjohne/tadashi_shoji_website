@@ -27,6 +27,8 @@ $prevImageBtn=$(".prevImageBtn");
 
 // slide config
 $fadeSlideSpeed = 'slow'
+$nextStyleName = ''
+$nextStyleDescription = ''
 
 $(window).load(function() {
 	ShowHideNextPrev($nextPrevBtnsInitState);
@@ -104,7 +106,9 @@ $("#outer_container a").click(function(event){
 //get next/prev images 
 // by passing the current image in the event find the next and previous right next to it
 function GetNextPrevImages(curr){
-	var nextImage=curr.parents(".content").next().find("a").attr("href");
+	var nextImage = curr.parents(".content").next().find("a").attr("href");
+	$nextStyleName = curr.parents(".content").next().find("img").attr("style_name");
+	$nextStyleDescription = curr.parents(".content").next().find("img").attr("style_description");	
 	if(nextImage==null){ //if last image, next is first
 		var nextImage=$(".content").first().find("a").attr("href");
 	}
@@ -150,7 +154,9 @@ function theNewImg_onload(){
 function BackgroundLoad($this, imgSrc){
 	$this.attr("src", "").attr("src", imgSrc); //change image source		
 	$previmg.attr("src", "").attr("src", $outer_container.data("prevImage")); //change image source		
-	$nextimg.attr("src", "").attr("src",  $outer_container.data("nextImage")); //change image source		
+	$nextimg.attr("src", "").attr("src",  $outer_container.data("nextImage")); //change image source	
+	$nextimg.attr("style_name", $nextStyleName )	
+	$nextimg.attr("style_description", $nextStyleDescription )	
 }
 
 
