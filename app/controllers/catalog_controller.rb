@@ -30,7 +30,7 @@ class CatalogController < ApplicationController
   end
   
   def video
-    
+    @collection = Collection.find(params[:id])
   end
   
 end

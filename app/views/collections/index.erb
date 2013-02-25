@@ -2,13 +2,16 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Collection</th>
+    <th>URL</th>
   </tr>
 
 <% @collections.each do |collection| %>
     <tr>
         <td><%=  collection.id %></td>
         <td><%=  collection.collection %></td>
+        <td><%=  collection.video_url %></td>
         <td><%=  link_to 'Show', collection_path(collection) %></td>
         <td><%=  link_to 'Edit', edit_collection_path(collection) %></td>
         <td><%=  link_to 'Styles', collection_styles_path(collection) %></td>

@@ -1,4 +1,11 @@
 <h2>Collection Form</h2>
-<label for="">Collection
-  <%= f.text_field :collection, :class => 'text_field' %>
-</label>
+<table>
+	<tr>
+		<th>Collection</th>
+		<td><%= f.text_field :collection, :class => 'text_field' %></td>
+	</tr>	
+	<tr>
+		<th>Video URL</th>
+		<td><%= f.text_field :video_url, :class => 'text_field' %></td>
+	</tr>		
+</table>	
