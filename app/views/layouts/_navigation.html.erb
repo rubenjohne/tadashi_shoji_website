@@ -1,14 +1,14 @@
-<nav>
-	<ul class="sf-menu">
+<nav class="sf-menu">
+	<ul>
 		<li><%= link_to "HOME", root_path %></li>
 		<li><%= link_to "SHOP", "http://shop.tadashishoji.com", :target => 'blank' %></li>
 		<li>
 			<a href="#">COLLECTION</a>
 			<ul>
-				<%= link_to "SS 2013 RUNWAY", :controller => "catalog", :action => "slide", :id => 3 %>
-				<%= link_to "SS 2013 COLLECTION", :controller => "catalog", :action => "slide", :id => 2 %>
-				<%= link_to "FW 2012 RUNWAY", :controller => "catalog", :action => "slide", :id => 6 %>
-				<%= link_to "FW 2012 COLLECTION", :controller => "catalog", :action => "slide", :id => 1 %>
+				<li><%= link_to "SS 2013 RUNWAY", :controller => "catalog", :action => "slide", :id => 3 %></li>
+				<li><%= link_to "SS 2013 COLLECTION", :controller => "catalog", :action => "slide", :id => 2 %></li>
+				<li><%= link_to "FW 2012 RUNWAY", :controller => "catalog", :action => "slide", :id => 6 %></li>
+				<li><%= link_to "FW 2012 COLLECTION", :controller => "catalog", :action => "slide", :id => 1 %></li>
 				<li>
 					<a href="#">ARCHIVE</a>
 					<ul>

@@ -106,8 +106,6 @@
         <div class="thumbScroller">
             <div class="container">
 				 <% @styles.each do |style| %>		
-					<!--- preload images -->
-					<%= image_tag style.picture.url(:base), :class =>  "preload", :alt => nil %>
 					<div class="content">
 						<div>
 							<%= link_to image_tag(style.picture.url(:mini), :class => "thumb"), style.picture.url(:base) %>
@@ -143,3 +141,8 @@
 	}
 	
 </script>
+
+<% @styles.each do |style| %>
+	<!--- preload images -->
+	<%= image_tag style.picture.url(:base), :class =>  "preload", :alt => nil %>
+<% end %>
