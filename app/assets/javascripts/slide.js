@@ -150,6 +150,7 @@ function theNewImg_onload(){
 function BackgroundLoad($this, imgSrc){
 	// check fade in fade out technique to switch image
 	// what i want to do is fade out the old and fade in the new once it's ready
+	/*
 	$this.fadeOut($fadeSlideSpeed, function() {
 		$this.attr("src", "").attr("src", imgSrc); //change image source		
 	}).fadeIn($fadeSlideSpeed);
@@ -163,7 +164,10 @@ function BackgroundLoad($this, imgSrc){
 	$nextimg.fadeOut($fadeSlideSpeed, function() {
 		$nextimg.attr("src", "").attr("src",  $outer_container.data("nextImage")); //change image source		
 	}).fadeIn($fadeSlideSpeed);
-
+	*/
+	$this.attr("src", "").attr("src", imgSrc); //change image source		
+	$previmg.attr("src", "").attr("src", $outer_container.data("prevImage")); //change image source		
+	$nextimg.attr("src", "").attr("src",  $outer_container.data("nextImage")); //change image source		
 }
 
 
