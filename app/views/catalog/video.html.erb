@@ -6,6 +6,11 @@
 <div id="video">
 	Loading the video....
 </div>	
+
+<!--- jwplayer -->
+<%= javascript_include_tag 'jwplayer/jwplayer' %>
+
+
 <script type='text/javascript'>
   jwplayer('video').setup({
     'file': '<%= @collection.video_url %>',
