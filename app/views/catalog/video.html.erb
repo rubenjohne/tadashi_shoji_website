@@ -9,11 +9,12 @@
 
 <!--- jwplayer -->
 <%= javascript_include_tag 'jwplayer/jwplayer' %>
+<%= javascript_include_tag 'jwplayer/jwplayer.html5' %>
 
 
 <script type='text/javascript'>
   jwplayer('video').setup({
-	'flashplayer': '/assets/jwplayer/jwplayer.flash.swf'
+	'flashplayer': 'http://glacial-fortress-4193.herokuapp.com/assets/jwplayer/jwplayer.flash.swf'
     'file': '<%= @collection.video_url %>',
     'width': '960',
     'height': '540',
