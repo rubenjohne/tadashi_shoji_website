@@ -31,6 +31,8 @@ class CatalogController < ApplicationController
   
   def video
     @collection = Collection.find(params[:id])
+    @gridClass = "grid-active"
+    @slideClass = "slide-active"      
   end
   
 end
