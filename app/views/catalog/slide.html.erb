@@ -1,22 +1,4 @@
 <!--- javascript specific files for the slide view -->
-<script type="text/javascript">
-
-	$(document).ready(function(e){
-
-		$("#slidedialog").dialog({
-			resizable: false,
-			modal: true,
-			autoOpen: false,
-			width:400
-		});
-		
-	});
-	
-		
-
-</script>
-
-
 <style type="text/css">
 	
 	.slide-base-image {
@@ -51,8 +33,32 @@
 		display:block;
 	}
 	
-
+	.main-slide-image {
+		opacity:0;
+	}
+	
 </style>
+
+<script type="text/javascript">
+
+	$(document).ready(function(e){
+
+		$("#slidedialog").dialog({
+			resizable: false,
+			modal: true,
+			autoOpen: false,
+			width:400
+		});
+		
+		
+		$(".main-slide-image").animate({opacity:1},500);
+		
+	});
+	
+		
+
+</script>
+
 
 <!--- catalog navigation -->
 <%= render :partial => 'catalog-navigation' %>
@@ -67,7 +73,7 @@
 <div id="bg">
     <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style1.picture.url(:popup),  :id => "previmg", 
+		<%= link_to image_tag(@style1.picture.url(:popup),  :id => "previmg", :class => "main-slide-image",
 			:style_name => @style1.name, :style_description => @style1.description, :style_color => @style1.color.color_name, 
 		 	:onClick => "showDialog($('#previmg').attr('style_name'), $('#previmg').attr('style_color'),
 			$('#previmg').attr('style_description'), $('#previmg').attr('src'))"),
@@ -79,7 +85,7 @@
 		</div>	
 	</div>
     <div id="div-center"  class="slide-base-image">
-		<%= link_to image_tag(@style2.picture.url(:popup),  :id => "bgimg", 
+		<%= link_to image_tag(@style2.picture.url(:popup),  :id => "bgimg", :class => "main-slide-image",
 			:style_name => @style2.name, :style_description => @style2.description, :style_color => @style2.color.color_name, 
 		 	:onClick => "showDialog($('#bgimg').attr('style_name'), $('#bgimg').attr('style_color'),
 			$('#bgimg').attr('style_description'), $('#bgimg').attr('src'))"),
@@ -91,7 +97,7 @@
 		</div>	
 	</div>
     <div class="slide-base-image">
-		<%= link_to image_tag(@style3.picture.url(:popup),  :id => "nextimg", 
+		<%= link_to image_tag(@style3.picture.url(:popup),  :id => "nextimg", :class => "main-slide-image",
 			:style_name => @style3.name, :style_description => @style3.description, :style_color => @style3.color.color_name, 
 		 	:onClick => "showDialog($('#nextimg').attr('style_name'), $('#nextimg').attr('style_color'),
 			$('#nextimg').attr('style_description'), $('#nextimg').attr('src'))"),
