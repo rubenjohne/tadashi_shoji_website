@@ -5,22 +5,45 @@
   <%= csrf_meta_tag %>
   <%= render 'layouts/javascripts' %>
   <%= render 'layouts/stylesheets' %>
+  <style type="text/css">
+	/* freaking footer css to get the footer down */
+	html,
+	body {
+	   margin:0;
+	   padding:0;
+	   height:100%;
+	}
+
+	#wrapper {
+		min-height:100%;
+		position:relative;
+	}
+	
+	#main {
+		padding-bottom:50px;
+	}
+
+	#footer {
+		position:absolute;
+		height:37px;
+	}
+	
+  </style>
 </head>
 <body>
-	<%= render 'layouts/header' %>
-	<%= render 'layouts/navigation' %>	
-	<div id="wrap">
-			<div id="main" class="container">
-				<%= yield %>
-			</div>	
+	<div id="wrapper">
+		<%= render 'layouts/header' %>
+		<%= render 'layouts/navigation' %>	
+		<div id="main" class="container">
+			<%= yield %>
 		</div>	
-	</div>
-	<%= render 'layouts/footer' %>
-	<!-- debug information not shown for production 
-		<%= debug(params) if Rails.env.development? %>
-		-->
+		<%= render 'layouts/footer' %>
+		<!-- debug information not shown for production 
+			<%= debug(params) if Rails.env.development? %>
+			-->
 	
-	<!--- gmaps 4 rails script -->
-	<%= yield :scripts %>	
+		<!--- gmaps 4 rails script -->
+		<%= yield :scripts %>	
+	</div>
 </body>
 </html>
