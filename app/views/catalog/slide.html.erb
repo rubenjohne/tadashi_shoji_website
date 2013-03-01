@@ -7,31 +7,51 @@
 
 	.slide-content {
 		position:absolute;
-		bottom: 50px;
+		bottom: 10px;
 		right: 10px;
 		text-align:right;
 		visibility:hidden;
 	}
 	
 	.slide-style-name {
-
+		color: #000000;
 	}
 	
 	.slide-description {
 		margin:20px 0;
+		color: #777777;
 	}
 	
 	.slide-color {
-		margin:10px 0;
+		margin:10px 0 40px 0;
+		color: #777777;
+	}
+	
+	.slide-email {
+		margin-top:5px;
+		color: #000000;
+	}
+	
+	.slide-email a {
+		color: #000000;
+	}
+	
+	.slide-email a:hover {
+		color: #777777;
 	}
 	
 	#slidedialog {
 		overflow:hidden;
 		margin-top:3px;
+		color:#777777;
+	}
+	
+	#slide-dialog-img {
+		margin-bottom:5px;
 	}
 	
 	#slide-dialog-style {
-		display:block;
+		color: #000000;
 	}
 	
 	.main-slide-image {
@@ -69,6 +89,7 @@
 	<span id="slide-dialog-style"></span>	
 	<span id="slide-dialog-color"></span>	
 	<span id="slide-dialog-description"></span>	
+	<p class="slide-email"><%= link_to "INQUIRE ABOUT THIS STYLE", "mailto:retail@tadashishoji.com" %></p>	
 </div>	
 
 <div id="bg">
@@ -83,6 +104,7 @@
 			<p class="slide-style-name prev-style"><%= @style1.name %></p>
 			<p class="slide-description prev-description"><%= @style1.description %></p>
 			<p class="slide-color prev-color"><%= @style1.color.color_name %></p>
+			<p class="slide-email"><%= link_to "INQUIRE ABOUT THIS STYLE", "mailto:retail@tadashishoji.com" %></p>
 		</div>	
 	</div>
     <div id="div-center"  class="slide-base-image">
@@ -95,6 +117,7 @@
 			<p class="slide-style-name bg-style"><%= @style2.name %></p>
 			<p class="slide-description bg-description"><%= @style2.description %></p>
 			<p class="slide-color bg-color"><%= @style2.color.color_name %></p>
+			<p class="slide-email"><%= link_to "INQUIRE ABOUT THIS STYLE", "mailto:retail@tadashishoji.com" %></p>
 		</div>	
 	</div>
     <div class="slide-base-image">
@@ -107,6 +130,7 @@
 			<p class="slide-style-name next-style"><%= @style3.name %></p>
 			<p class="slide-description next-description"><%= @style3.description %></p>
 			<p class="slide-color next-color"><%= @style3.color.color_name %></p>
+			<p class="slide-email"><%= link_to "INQUIRE ABOUT THIS STYLE", "mailto:retail@tadashishoji.com" %></p>
 		</div>	
 	</div>
 	
