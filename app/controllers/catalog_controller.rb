@@ -6,6 +6,7 @@ class CatalogController < ApplicationController
       @styles = @collection.styles
       @gridClass = "grid-active"
       @slideClass = "slide-inactive"
+      @title = @collection.collection
     end  
   end
   
@@ -17,6 +18,7 @@ class CatalogController < ApplicationController
       @styles = @collection.styles
       @gridClass = "grid-inactive"
       @slideClass = "slide-active"      
+      @title = @collection.collection
       # get the first 3 styles 
       if @styles.length >= 3
         @style1 = @styles[0]
@@ -30,6 +32,7 @@ class CatalogController < ApplicationController
   end
   
   def video
+    @title = @collection.collection
     @collection = Collection.find(params[:id])
     @gridClass = "grid-active"
     @slideClass = "slide-active"      
