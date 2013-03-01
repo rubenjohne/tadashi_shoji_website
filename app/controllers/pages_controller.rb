@@ -6,4 +6,9 @@ class PagesController < ApplicationController
   def collections
     @title = "Collections"
   end
+  
+  def privacy
+    
+  end
+    
 end
