@@ -141,12 +141,24 @@
 #customdialog {
 	overflow:hidden;
 	padding:2px;
+	font-size:11px;
+	color: #777777;
 }
 
-#dialog-style, #dialog-description {
-	display:block;
-	font-size:14px;
-	margin-top:3px;
+#dialog-style {
+	color: #000000;
+}
+
+#dialog-description {
+
+}
+
+#customdialog  a {
+	color: #000000;
+}
+
+#customdialog  a:hover {
+	color: #777777;
 }
 	
 .styles {
