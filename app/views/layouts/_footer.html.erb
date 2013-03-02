@@ -1,7 +1,26 @@
+<style type="text/css">
+
+	.submit:hover {
+		color:#FFFFFF !important;
+	}
+	
+</style>
+
 <footer id="footer">
 	<div class="footer-content">
 		<ul id="footer-links">
-			<li><%= link_to "JOIN OUR MAILING LIST", "#"  %></li>
+			<li>
+				<form name="ccoptin" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post" class="clearfix" style="margin-top:-5px;">
+
+				    <div align="center">
+					    <input type="text" name="ea" size="20" value="Enter e-mail address" onclick="this.value='';" style="font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:11px; border:0px solid #ffffff; color:#777777">
+					    <input type="submit" name="go" value="JOIN OUR MAILING LIST" class="submit"  style="font-family:Verdana,Arial,Helvetica,sans-serif; font-size:11px; background-color:#000000; color:#777777; border:none">
+					    <input type="hidden" name="llr" value="6mpiveeab">
+					    <input type="hidden" name="m" value="1103621683206">
+					    <input type="hidden" name="p" value="oi">
+				  </div>
+				</form>
+			</li>
 			<li><%= link_to "WHOLESALE", "http://catalog.tadashishoji.com", :target => 'blank' %></li>
 			<li><%= link_to "PRIVACY POLICY", pages_privacy_path  %></li>
 		</ul>	

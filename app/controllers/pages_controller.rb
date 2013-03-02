@@ -10,5 +10,9 @@ class PagesController < ApplicationController
   def privacy
     
   end
+  
+  def newsletter
+    
+  end
     
 end
