@@ -25,6 +25,7 @@
 <div id="customdialog">
 	<img id="dialog-img" height="600px" width="400px"/>
 	<span id="dialog-style"></span>	
+	<span id="dialog-color"></span>	
 	<span id="dialog-description"></span>	
 	<p class="slide-email"><%= link_to "INQUIRE ABOUT THIS STYLE", "mailto:retail@tadashishoji.com" %></p>	
 </div>	
@@ -36,46 +37,26 @@
 <div class="styles">
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       
-	
-	<!--- create variable declaration to be used in loop -->
-	<%
-		name = style.name
-		description = escape_javascript style.description
-		picture_base = style.picture.url(:popup)
-		picture_small = style.picture.url(:grid)
-	%>
-	
+		
      <% if  trueIndex == 1 %>
         <ul>
         <li class="grid-style">
-			<%= link_to image_tag(picture_small, :alt => nil, 
-			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
-			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
-			<span class="style-name"><%= style.name %></span>
+			<%= render :partial => '_grid', :locals => {:style => style}  %>
         </li>
     <% elsif trueIndex == @styles.size %>
         <li class="grid-style">
-			<%= link_to image_tag(picture_small, :alt => nil, 
-			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
-			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
-			<span class="style-name"><%= style.name %></span>
+			<%= render :partial => '_grid', :locals => {:style => style}  %>
         </li>
         </ul>
      <% elsif (trueIndex % 5) == 0 %>
         <li class="grid-style">
-			<%= link_to image_tag(picture_small, :alt => nil, 
-			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
-			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
-			<span class="style-name"><%= style.name %></span>
+			<%= render :partial => '_grid', :locals => {:style => style}  %>
         </li>
         </ul>
         <ul>
      <% else %>
 		<li class="grid-style">
-			<%= link_to image_tag(picture_small, :alt => nil, 
-			:onClick => "showDialog('#{name}','#{description}','#{picture_base}')"),
-			'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
-			<span class="style-name"><%= style.name %></span>
+			<%= render :partial => '_grid', :locals => {:style => style}  %>
         </li>
      <% end %>
   <% end %>
@@ -94,10 +75,11 @@
 	})*/
 	
 	// OPTIMIZE function to show the dialog
-	function showDialog(name, desc, picture) {
+	function showDialog(name, color, desc, picture) {
 		$("#dialog-img").attr("src", '');	
 		$("#dialog-img").attr("src", picture);
 		$("#dialog-style").text(name);
+		$("#dialog-color").text(color);
 		$("#dialog-description").text(desc);
 		$("#customdialog").dialog("open");
 	}

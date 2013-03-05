@@ -1,0 +1,15 @@
+<!--- create variable declaration to be used in loop -->
+<%
+	name = style.name
+	description = escape_javascript style.description
+	color = style.color.color_name
+	picture_base = style.picture.url(:popup)
+	picture_small = style.picture.url(:grid)
+%>
+
+
+
+<%= link_to image_tag(picture_small, :alt => nil, 
+:onClick => "showDialog('#{name}','#{color}', '#{description}','#{picture_base}')"),
+'#',  :title => style.name, :class => "grid-image", :onClick => "return false;" %>
+<span class="style-name"><%= style.name %></span>
