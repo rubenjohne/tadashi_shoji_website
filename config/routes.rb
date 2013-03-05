@@ -42,6 +42,8 @@ TadashiShojiWebsite::Application.routes.draw do
   get "pages/collections"
   
   get "pages/privacy"
+
+  get "pages/contact"
   
   get "pages/newsletter"
 
