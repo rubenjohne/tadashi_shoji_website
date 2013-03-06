@@ -4,6 +4,7 @@
   <tr>
     <th>ID</th>
     <th>Collection</th>
+    <th>Video URL</th>
     <th>URL</th>
   </tr>
 
@@ -12,6 +13,7 @@
         <td><%=  collection.id %></td>
         <td><%=  collection.collection %></td>
         <td><%=  collection.video_url %></td>
+        <td><%=  collection.url %></td>
         <td><%=  link_to 'Show', collection_path(collection) %></td>
         <td><%=  link_to 'Edit', edit_collection_path(collection) %></td>
         <td><%=  link_to 'Styles', collection_styles_path(collection) %></td>

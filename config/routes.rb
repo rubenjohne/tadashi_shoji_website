@@ -26,9 +26,9 @@ TadashiShojiWebsite::Application.routes.draw do
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
-  match 'catalog/grid/:id' => "catalog#grid"
-  match 'catalog/slide/:id' => "catalog#slide"
-  match 'catalog/video/:id' => "catalog#video"
+  match 'catalog/grid/:url' => "catalog#grid"
+  match 'catalog/slide/:url' => "catalog#slide"
+  match 'catalog/video/:url' => "catalog#video"
 
   match '/', :to => 'pages#home'
   

@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225200445) do
+ActiveRecord::Schema.define(:version => 20130306020333) do
 
   create_table "collections", :force => true do |t|
     t.string   "collection"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "video_url"
+    t.string   "url"
   end
+
+  add_index "collections", ["url"], :name => "index_collections_on_url"
 
   create_table "colors", :force => true do |t|
     t.string   "color_code"

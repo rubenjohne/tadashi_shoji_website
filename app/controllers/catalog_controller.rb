@@ -1,8 +1,8 @@
 class CatalogController < ApplicationController
   
   def grid
-    if Collection.exists?(params[:id])
-      @collection = Collection.find(params[:id])
+    if Collection.exists?(:url => params[:url])
+      @collection = Collection.find_by_url(params[:url])
       @styles = @collection.styles
       @gridClass = "grid-active"
       @slideClass = "slide-inactive"
@@ -13,8 +13,8 @@ class CatalogController < ApplicationController
   
   def slide
     
-    if Collection.exists?(params[:id])
-      @collection = Collection.find(params[:id])
+    if Collection.exists?(:url => params[:url])
+      @collection = Collection.find_by_url(params[:url])
       @styles = @collection.styles
       @gridClass = "grid-inactive"
       @slideClass = "slide-active"      
@@ -32,7 +32,7 @@ class CatalogController < ApplicationController
   end
   
   def video
-    @collection = Collection.find(params[:id])
+    @collection = Collection.find_by_url(params[:url])
     @title = @collection.collection
     @gridClass = "grid-inactive"
     @slideClass = "slide-inactive"      

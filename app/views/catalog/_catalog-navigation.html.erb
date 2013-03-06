@@ -3,14 +3,14 @@
 		<span><%= @collection.collection %></span>
 	</div>	
 	<div id="catalog-controls">
-		<%= link_to "Slide", { :controller => "catalog", :action => "slide", :id => @collection }, :class =>  "#{@slideClass}" %>
-		<%= link_to "Grid", { :controller => "catalog", :action => "grid", :id => @collection }, :class =>  "#{@gridClass}" %>
+		<%= link_to "Slide", { :controller => "catalog", :action => "slide", :url => @collection.url }, :class =>  "#{@slideClass}" %>
+		<%= link_to "Grid", { :controller => "catalog", :action => "grid", :url => @collection.url }, :class =>  "#{@gridClass}" %>
 	</div>
 	<% if @collection.has_video? %>
 		<div id="video-image">
-			<%= link_to "VIDEO", { :controller => "catalog", :action => "video", :id => @collection } %>
+			<%= link_to "VIDEO", { :controller => "catalog", :action => "video", :url => @collection.url } %>
 			<span class="vbar"></span>
-			<%= link_to "IMAGES", { :controller => "catalog", :action => "slide", :id => @collection } %>		
+			<%= link_to "IMAGES", { :controller => "catalog", :action => "slide", :url => @collection.url } %>		
 		</div>				
 	<% end %>	
 </div>	
