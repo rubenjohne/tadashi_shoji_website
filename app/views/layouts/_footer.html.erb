@@ -5,6 +5,7 @@
 		text-indent:-9999px;
 		width:30px;
 		height:30px;
+		margin-left:-9px;
 	}
 	
 	.submit:hover {
@@ -30,6 +31,7 @@
 		width:30px;
 		height:30px;
 		display:inline-block;
+		font-size:11px;
 	}
 	
 	ul#social-links li .twitter-link {
@@ -75,7 +77,7 @@
 				<form name="ccoptin" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post" class="clearfix" style="margin-top:-6px;">
 
 				    <div align="center">
-					    <input type="text" name="ea" size="20" value="JOIN OUR MAILING LIST" onclick="this.value='';" style="font-size:9px; border:0px solid #ffffff; color:#ffffff;background-color:#555555;padding-left:2px;padding-top:5px">
+					    <input type="text" name="ea" size="25" value="JOIN OUR MAILING LIST" onclick="this.value='';" style="font-size:9px; border:0px solid #ffffff; color:#ffffff;background-color:#555555;padding-left:2px;padding-top:5px">
 					    <input type="submit" name="go" value="SUBSCRIBE" class="submit"  style="font-size:9px; background-color:#000000; color:#777777; border:none;padding-right:0">
 					    <input type="hidden" name="llr" value="6mpiveeab">
 					    <input type="hidden" name="m" value="1103621683206">
@@ -88,8 +90,8 @@
 			<li><%= link_to "CONTACT US", pages_contact_path  %></li>
 		</ul>	
 		<ul id="social-links">
-			<li><%= link_to "twitter", "http://twitter.com/TadashiShoji", :target => 'blank', :class => "twitter-link" %></li>
 			<li><%= link_to "facebook", "http://www.facebook.com/tadashishoji",  :target => 'blank', :class => "facebook-link"  %></li>		
+			<li><%= link_to "twitter", "http://twitter.com/TadashiShoji", :target => 'blank', :class => "twitter-link" %></li>
 			<li><%= link_to "pinterest", "http://pinterest.com/tadashishoji/", :target => 'blank', :class => "pinterest-link" %></li>
 			<li><%= link_to "instagram", "http://instagram.com/tadashishoji/",  :target => 'blank', :class => "instagram-link"  %></li>		
 		</ul>	
