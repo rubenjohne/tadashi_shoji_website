@@ -8,6 +8,7 @@ gem 'rails', '3.2.7'
 gem 'gmaps4rails'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'google-analytics-rails'
 
 group :production do
   gem 'pg'

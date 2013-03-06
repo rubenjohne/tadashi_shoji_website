@@ -65,6 +65,9 @@ TadashiShojiWebsite::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
+  # google analytics 
+  GA.tracker = "UA-38892472-1"
+  
   # paperclip Amazon AWS S3 configuration
   config.paperclip_defaults = {
     :storage => :s3,

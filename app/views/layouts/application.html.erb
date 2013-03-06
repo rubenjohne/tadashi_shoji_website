@@ -5,6 +5,8 @@
   <%= csrf_meta_tag %>
   <%= render 'layouts/javascripts' %>
   <%= render 'layouts/stylesheets' %>
+  <!--- google analytics -->
+  <%= analytics_init if Rails.env.production? %>
   <style type="text/css">
 	/* freaking footer css to get the footer down */
 	html,
