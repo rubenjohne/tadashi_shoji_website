@@ -1,6 +1,6 @@
 class Retailer < ActiveRecord::Base
   acts_as_gmappable 
-  attr_accessible :address1, :address2, :city, :state_id, :store, :zip_code, :country_id
+  attr_accessible :address1, :address2, :city, :state_id, :store, :zip_code, :country_id, :telephone
   belongs_to :country
   belongs_to :state
   # validations

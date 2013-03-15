@@ -28,6 +28,10 @@
 		<td><%= collection_select(:retailer, :country_id, Country.all, :id, :country_name, :prompt => true ) %></td>
 	</tr>
 	<tr>
+		<th>Telephone:</th>
+		<td><%= f.text_field :telephone, :class => "text_field "%></td>
+	</tr>
+	<tr>
 		<td></td>
 		<td><%= submit_tag "Save changes", :id => "submit", :name => "submit", :class => "form_submit", :disabled => false, :disable_with => "Please wait..." %></td>
 	</tr>	
