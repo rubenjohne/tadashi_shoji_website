@@ -1,7 +1,74 @@
 body {
     background-attachment: fixed;
-    background-image: url("/assets/bg.jpg");
-    background-position: center top;
+    background-image: url("/assets/thirty/30bg.jpg");
+    background-position: center -90px;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+}
+
+#home-banner {
+	background: url("/assets/thirty/landing_30for30.png") no-repeat;
+	width:453px;
+	height:227px;
+	margin-left: -175px;
+	margin-top:70px;
+}
+
+#home-banner-2 {
+	background: url("/assets/thirty/landing_anniversary.png") no-repeat;
+	width:453px;
+	height:227px;
+	margin-left: -175px;
+	margin-top: 15px;		
+}
+#homepage div {
+	position: relative;
+	
+}
+#homepage div p {
+	color: #948065;
+	padding-top: 119px;
+	font-size: 13px;
+	text-align: center;
+	line-height:16px;
+}
+
+#homepage div a {
+	background: url("/assets/thirty/arrowSmall_idle.png") no-repeat center right transparent;
+	font-family: 'didot';
+	font-style: italic;
+	font-size: 17px;
+	color: #948065;
+	position: absolute;	
+	padding-right: 22px;
+}
+
+#homepage div a:hover {
+	background: url("/assets/thirty/arrowSmall_hover.png") no-repeat center right transparent;
+	color: #675337;
+}
+
+.readlink {
+	left: 50px;
+	top: 192px;
+}
+
+.sharelink {
+	left: 253px;
+	top: 192px;
+}
+
+.viewlink {
+	left:50px;
+	top:192px;
+}
+
+.watchlink {
+	left: 253px;
+	top:192px;
 }
