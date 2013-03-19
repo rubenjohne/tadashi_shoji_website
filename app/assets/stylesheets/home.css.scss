@@ -1,6 +1,6 @@
 body {
     background-attachment: fixed;
-    background-image: url("/assets/thirty/30bg.jpg");
+    background-image: url("/assets/bg.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,20 +11,23 @@ body {
 	bottom: 0;
 }
 
+#homepage {
+	width:453px;
+	margin: auto;
+}
+
 #home-banner {
 	background: url("/assets/thirty/landing_30for30.png") no-repeat;
 	width:453px;
 	height:227px;
-	margin-left: 75px;
-	margin-top:70px;
+	margin-top:15px;
 }
 
 #home-banner-2 {
 	background: url("/assets/thirty/landing_anniversary.png") no-repeat;
 	width:453px;
 	height:227px;
-	margin-left: 75px;
-	margin-top: 15px;		
+	margin-top: 70px;		
 }
 #homepage div {
 	position: relative;
@@ -64,7 +67,7 @@ body {
 }
 
 .viewlink {
-	left:50px;
+	left:45px;
 	top:192px;
 }
 
