@@ -31,8 +31,9 @@
 </div>	
 
 <!--- catalog navigation -->
-<%= render :partial => 'catalog-navigation' %>
-
+<% unless @collection.nil? %>
+	<%= render :partial => 'catalog-navigation' %>
+<% end %>
 
 <div class="styles">
   <% @styles.each_with_index   do |style, index = 1| %>

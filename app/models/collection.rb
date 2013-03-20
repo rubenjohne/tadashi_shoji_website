@@ -9,5 +9,6 @@ class Collection < ActiveRecord::Base
   def has_video?
     video_url != '' && !video_url.nil?
   end
+
   
 end

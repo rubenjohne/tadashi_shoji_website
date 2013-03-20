@@ -38,4 +38,9 @@ class CatalogController < ApplicationController
     @slideClass = "slide-inactive"      
   end
   
+  def search
+    @styles = Style.search(params[:search])
+    render :grid
+  end
+  
 end

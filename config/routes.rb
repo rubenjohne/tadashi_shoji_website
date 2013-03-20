@@ -29,6 +29,7 @@ TadashiShojiWebsite::Application.routes.draw do
   match 'catalog/grid/:url' => "catalog#grid"
   match 'catalog/slide/:url' => "catalog#slide"
   match 'catalog/video/:url' => "catalog#video"
+  get 'catalog/search' => "catalog#search" 
 
   match '/', :to => 'pages#home'
   
