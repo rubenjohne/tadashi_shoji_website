@@ -39,8 +39,18 @@ class CatalogController < ApplicationController
   end
   
   def search
-    @styles = Style.search(params[:search])
-    render :grid
+    @referer = request.referer
+    @search = params[:search]
+    @styles = Style.search(@search)
+    unless @styles.nil? 
+      if @styles.count > 0 
+        render :grid
+      else
+        render :noresults  
+      end  
+    else
+      redirect_to root_path
+    end    
   end
   
 end

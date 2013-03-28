@@ -26,9 +26,9 @@ class Style < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      joins(:color).find(:all, :conditions => ['styles.name LIKE ? OR styles.description LIKE ? OR colors.color_name LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
     else
-      find(:all)
+      nil
     end  
   end
   

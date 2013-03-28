@@ -35,6 +35,12 @@
 	<%= render :partial => 'catalog-navigation' %>
 <% end %>
 
+<% unless @search.nil? %>
+	<div id="search-results-bar">
+		<div class="search-term"><span>Search results for '<%= @search %>'</span></div>
+	</div>	
+<% end %>
+
 <div class="styles">
   <% @styles.each_with_index   do |style, index = 1| %>
      <% trueIndex = index + 1 %>                       

@@ -37,6 +37,28 @@ header {
 		right: 5px;
 		top: 5px;
 	} 
+	
+	#search-bar {
+		position:absolute;
+		right:100px;
+		top:40px;
+		#search-button {
+			background: url("/assets/searchIcon_idle.png") no-repeat transparent;
+			border:none;
+			cursor:pointer;
+		}
+		#search-button:hover {
+			background: url("/assets/searchIcon_hover.png") no-repeat transparent;		
+		}
+		#search-input {
+			border:1px solid #ffffff;
+			width:100px;
+			height:20px;
+			background-color:#f0efef;
+			padding-left:3px;
+		}		
+	}	
+	
 }
 
 nav {
